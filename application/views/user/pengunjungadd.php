@@ -11,6 +11,7 @@
             <label for="provinsi" class="col-sm-2 col-form-label">Provinsi</label>
             <div class="col-sm-10">
                 <select class="form-control" id="" name="provinsi">
+
                     <?php foreach ($provinsi as $p) : ?>
                         <option value="<?= $p['id'] ?>" <?= ($p['id'] == set_value('provinsi')) ? 'selected="selected"' : '' ?>> <?= $p['nama_provinsi'] ?> </option>
                     <?php endforeach; ?>

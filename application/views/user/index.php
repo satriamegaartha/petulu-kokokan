@@ -12,7 +12,7 @@
             </a>
         </div>
         <div class="card-body">
-            <h4 class="text-primary"><b> <?= (isset($periode)) ? $periode : '' ?></b></h4>
+            <h4 class="text-primary"><b> <?= (isset($periode)) ? $periode : '' ?></b> <?= (isset($nama_provinsi)) ? '(' . $nama_provinsi . ')' : '(Seluruh Provinsi)' ?> </h4>
             <p class="text-primary"><b> <?= (isset($subtitle)) ? $subtitle : '' ?></b></p>
             <div id="chartPengunjung"></div>
         </div>
@@ -47,6 +47,19 @@
                         <?= form_error('periode', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="provinsi" class="col-sm-4 col-form-label">Provinsi</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="" name="provinsi">
+                            <option value="All" <?= ('All' == set_value('provinsi')) ? 'selected="selected"' : '' ?>> Seluruh Provinsi </option>
+                            <?php foreach ($provinsi as $p) : ?>
+                                <option value="<?= $p['id'] ?>" <?= ($p['id'] == set_value('provinsi')) ? 'selected="selected"' : '' ?>> <?= $p['nama_provinsi'] ?> </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <?= form_error('provinsi', '<small class="text-danger pl-3">', '</small>'); ?>
+                    </div>
+                </div>
+
                 <div class="form-group row">
                     <label for="tanggal_awal" class="col-sm-4 col-form-label">Tanggal Awal</label>
                     <div class="col-sm-8">

@@ -315,63 +315,21 @@ class User extends CI_Controller
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        // $query = "SELECT `provinsi`.* , `pengunjung`.*
-        //             FROM `provinsi` JOIN `pengunjung`
-        //             ON `provinsi`.`id` = `pengunjung`.`provinsi_id`   
-        //             ORDER BY `pengunjung`.`tanggal` ASC;                                                         
-        //         ";
-        // $data['pengunjung'] = $this->db->query($query)->result_array();
+        $query = "SELECT `provinsi`.* , `pengunjung`.*
+                    FROM `provinsi` JOIN `pengunjung`
+                    ON `provinsi`.`id` = `pengunjung`.`provinsi_id`   
+                    ORDER BY `pengunjung`.`tanggal` ASC;                                                         
+                ";
+        $data['pengunjung'] = $this->db->query($query)->result_array();
 
-        // // var_dump($data['pengunjung']);
-        // // die;
+        // var_dump($data['pengunjung']);
+        // die;
 
-        // $this->load->view('templates/header', $data);
-        // $this->load->view('templates/sidebar', $data);
-        // $this->load->view('templates/topbar', $data);
-        // $this->load->view('user/pengunjung', $data);
-        // $this->load->view('templates/footer');
-
-
-
-
-        $data['provinsi'] = $this->db->get('provinsi')->result_array();
-
-        $this->form_validation->set_rules('provinsi', 'Provinsi', 'required');
-        $this->form_validation->set_rules('tanggal_awal', 'Tanggal Awal', 'required');
-        $this->form_validation->set_rules('tanggal_akhir', 'Tanggal Akhir', 'required');
-
-        if ($this->form_validation->run() == false) {
-
-            $data['pengunjung'] = $this->db->order_by('tanggal', 'ASC')->get('pengunjung')->result_array();
-
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('user/pengunjung', $data);
-            $this->load->view('templates/footer');
-        } else {
-            $provinsi = $this->input->post('provinsi');
-            $tanggal_awal = $this->input->post('tanggal_awal');
-            $tanggal_akhir = $this->input->post('tanggal_akhir');
-
-            $data_provinsi = $this->db->get_where('provinsi', ['id' => $provinsi])->row_array();
-            $data['nama_provinsi'] = $data_provinsi['nama_provinsi'];
-
-            if ($provinsi == 'All') {
-                $data['pengunjung'] = $this->db->order_by('tanggal', 'ASC')->get_where('pengunjung', ['tanggal >=' => $tanggal_awal, 'tanggal <=' => $tanggal_akhir])->result_array();
-            } else {
-                $data['pengunjung'] = $this->db->order_by('tanggal', 'ASC')->get_where('pengunjung', ['tanggal >=' => $tanggal_awal, 'tanggal <=' => $tanggal_akhir, 'provinsi_id' => $provinsi])->result_array();
-            }
-
-            $data['subtitle'] = 'Periode: ' . date('d F Y', strtotime($tanggal_awal)) . ' - ' .  date('d F Y', strtotime($tanggal_akhir));
-
-
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('user/pengunjung', $data);
-            $this->load->view('templates/footer');
-        }
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/pengunjung', $data);
+        $this->load->view('templates/footer');
     }
 
     public function pengunjungadd()
@@ -400,10 +358,8 @@ class User extends CI_Controller
             $tanggal = $this->input->post('tanggal');
             $bulan = date('F', strtotime($tanggal));
             $tahun = intval(date('Y', strtotime($tanggal)));
-            $nama_provinsi = $this->db->get_where('provinsi', ['id' => $provinsi])->row_array()['nama_provinsi'];
             $data = [
                 'provinsi_id' => $this->input->post('provinsi'),
-                'nama_provinsi' => $nama_provinsi,
                 'jumlah' => $this->input->post('jumlah'),
                 'tanggal' => $this->input->post('tanggal'),
                 'bulan' => $bulan,
@@ -447,10 +403,9 @@ class User extends CI_Controller
             $tanggal = $this->input->post('tanggal');
             $bulan = date('F', strtotime($tanggal));
             $tahun = intval(date('Y', strtotime($tanggal)));
-            $nama_provinsi = $this->db->get_where('provinsi', ['id' => $provinsi])->row_array()['nama_provinsi'];
+
 
             $this->db->set('provinsi_id', $provinsi);
-            $this->db->set('nama_provinsi', $nama_provinsi);
             $this->db->set('jumlah', $jumlah);
             $this->db->set('tanggal', $tanggal);
             $this->db->set('bulan', $bulan);

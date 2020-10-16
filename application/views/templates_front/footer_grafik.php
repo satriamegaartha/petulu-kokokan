@@ -6,7 +6,7 @@
         Highcharts.chart('chartPengunjung', {
             chart: {
                 type: 'column',
-                backgroundColor: '#d6d6d6'
+                backgroundColor: '#f5f5f5'
             },
             title: {
                 text: 'Jumlah Pengunjung'

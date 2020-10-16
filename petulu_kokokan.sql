@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2020 at 10:20 AM
+-- Generation Time: Oct 16, 2020 at 04:44 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -107,6 +107,7 @@ INSERT INTO `lokasi` (`id`, `user_id`, `provinsi`, `kabupaten`, `kecamatan`, `de
 CREATE TABLE `pengunjung` (
   `id` int(11) NOT NULL,
   `provinsi_id` int(11) NOT NULL,
+  `nama_provinsi` varchar(255) NOT NULL,
   `jumlah` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `bulan` varchar(20) NOT NULL,
@@ -117,21 +118,23 @@ CREATE TABLE `pengunjung` (
 -- Dumping data for table `pengunjung`
 --
 
-INSERT INTO `pengunjung` (`id`, `provinsi_id`, `jumlah`, `tanggal`, `bulan`, `tahun`) VALUES
-(1, 75, 911, '2019-12-10', 'December', 2019),
-(2, 51, 105, '2019-12-18', 'December', 2019),
-(4, 11, 45, '2020-09-16', 'September', 2020),
-(5, 51, 999, '2020-09-22', 'September', 2020),
-(6, 11, 123, '2020-10-15', 'October', 2020),
-(7, 12, 233, '2020-10-14', 'October', 2020),
-(8, 13, 2331, '2020-10-16', 'October', 2020),
-(10, 11, 45, '2020-10-19', 'October', 2020),
-(12, 11, 45, '2020-11-18', 'November', 2020),
-(13, 92, 1500, '2020-11-18', 'November', 2020),
-(14, 91, 1233, '2020-11-17', 'November', 2020),
-(16, 11, 444, '2020-12-16', 'December', 2020),
-(17, 15, 99, '2020-10-24', 'October', 2020),
-(18, 11, 123, '2020-10-26', 'October', 2020);
+INSERT INTO `pengunjung` (`id`, `provinsi_id`, `nama_provinsi`, `jumlah`, `tanggal`, `bulan`, `tahun`) VALUES
+(1, 75, 'Gorontalo', 911, '2019-12-10', 'December', 2019),
+(2, 51, 'Bali', 105, '2019-12-18', 'December', 2019),
+(4, 11, 'Aceh', 45, '2020-09-16', 'September', 2020),
+(5, 51, 'Bali', 999, '2020-09-22', 'September', 2020),
+(6, 33, 'Jawa Tengah', 123, '2020-10-15', 'October', 2020),
+(7, 16, 'Sumatera Selatan', 233, '2020-10-14', 'October', 2020),
+(8, 11, 'Aceh', 233, '2020-10-16', 'October', 2020),
+(10, 11, 'Aceh', 45, '2020-10-19', 'October', 2020),
+(12, 11, 'Aceh', 45, '2020-11-18', 'November', 2020),
+(13, 92, 'Papua', 1500, '2020-11-18', 'November', 2020),
+(14, 91, 'Papua Barat', 1233, '2020-11-17', 'November', 2020),
+(16, 11, 'Aceh', 444, '2020-12-16', 'December', 2020),
+(17, 31, 'DKI Jakarta', 99, '2020-10-24', 'October', 2020),
+(18, 32, 'Jawa Barat', 123, '2020-10-26', 'October', 2020),
+(19, 13, 'Sumatera Barat', 9, '2020-10-22', 'October', 2020),
+(20, 11, 'Aceh', 500, '2019-11-16', 'November', 2019);
 
 -- --------------------------------------------------------
 
@@ -302,7 +305,7 @@ ALTER TABLE `lokasi`
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `sejarah`

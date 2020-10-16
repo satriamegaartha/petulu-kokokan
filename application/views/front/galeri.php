@@ -81,20 +81,33 @@
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
                 <h3 data-num="01" class="subhead">Galeri</h3>
-                <h1 class="display-1 ">
-                    Buwung Puyuh?
-                    Bukan, ini Burung Kokokan :)
-                </h1>
 
-                <div style="margin-left: 100px;">
-                    <a href="<?= base_url('front/galeri') ?>" class="btn btn-animatedbg">
-                        <div style="color: black;">
-                            Lihat Seluruh Galeri
+            </div>
+        </div>
+        <div class="row">
+            <?php echo form_open_multipart('front/galeri/') ?>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group row">
+                        <label for="jenis_burung" class="col-form-label">
+                            <h5>Jenis Burung</h5>
+                        </label>
+                        <div class="" style="margin-left: 20px;">
+                            <select class="form-control" id="" name="jenis_burung">
+                                <option value="All" <?= ('All' == set_value('jenis_burung')) ? 'selected="selected"' : '' ?>> Seluruh Jenis</option>
+                                <?php foreach ($jenis_burung as $p) : ?>
+                                    <option value="<?= $p['id'] ?>" <?= ($p['id'] == set_value('jenis_burung')) ? 'selected="selected"' : '' ?>> <?= $p['jenis'] ?> </option>
+                                <?php endforeach; ?>
+                            </select>
+                            <?= form_error('jenis_burung', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
             </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
 
         <div class="portfolio block-1-4 block-m-1-3 block-tab-1-2 collapse">
@@ -130,77 +143,3 @@
         </div> <!-- end portfolio -->
 
     </section>
-    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/ubud.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-        <div class="testimonials-wrap" data-aos="fade-up">
-
-            <div class="row section-header" data-aos="fade-up">
-                <div class="col-full">
-                    <h3 data-num="02" class="subhead" style="color: white;">Lokasi</h3>
-                    <h1 class="display-1" style="color: white;">
-                        Ih bagus banget, mau liat tapi dimana ya?
-                    </h1>
-                </div>
-            </div>
-
-            <div class="row testimonials">
-
-                <div class="col-full testimonials__slider">
-
-                    <div class="testimonials__slide">
-                        <!-- <span class="testimonials__icon"></span> -->
-                        <p style="color: white;">Burung kokokan berada di Desa Petulu, Ubud. Ya Ubud selalu saja memiliki hal menarik untuk dinikmati.</p>
-
-                    </div> <!-- end testimonials__slide -->
-
-                    <div class="testimonials__slide">
-                        <!-- <span class="testimonials__icon"></span> -->
-                        <p style="color: white;"> Keberadaan burung bangau atau kokokan, terasa menyatu dengan kehidupan warga dan alam, sehingga jarang bisa ditemukan di tempat lainnya, dan membuatnya layak menjadi salah satu tujuan wisata unik di Bali</p>
-                    </div> <!-- end testimonials__slide -->
-
-
-                </div> <!-- end testimonials__slider -->
-
-                <div class="row services-list block-1-3 block-m-1-2 block-tab-full">
-
-                    <div id="googleMap" style="width:100%;height:480px;"></div>
-
-                </div> <!-- end services-list -->
-
-            </div> <!-- end testimonials -->
-
-        </div> <!-- end testimonials-wrap -->
-
-    </section> <!-- end s-works -->
-
-
-    <!-- services
-    ================================================== -->
-    <section id="works" class="s-works target-section">
-
-        <div class="row section-header" data-aos="fade-up">
-            <div class="col-full">
-                <h3 data-num="03" class="subhead">Data Pengunjung</h3>
-                <h1 class="display-1">
-                    Pengunjung Desa Wisata Kokokan banyak loh. Yuk kita lihat grafik dibawah.
-                </h1>
-                <p class="lead">
-                    <?= $subtitle; ?>
-                    <div style="margin-left: 100px;">
-                        <a href="<?= base_url('front/pengunjung') ?>" class="btn btn-animatedbg">
-                            <div style="color: black;">
-                                Lihat Detail Data Pengunjung
-                            </div>
-                        </a>
-                    </div>
-                    <hr>
-                </p>
-
-            </div>
-        </div>
-
-        <div class="row services-list block-1-3 block-m-1-2 block-tab-full">
-
-            <div id="chartPengunjung"></div>
-        </div> <!-- end services-list -->
-
-    </section> <!-- end s-services -->
