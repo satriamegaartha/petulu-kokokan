@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url('user') ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -31,13 +31,13 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url('user/galeri') ?>">
             <i class="fas fa-fw fa-images"></i>
             <span>Galeri</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url('user/pengunjung') ?>">
             <i class="fas fa-fw fa-users"></i>
             <span>Pengunjung</span></a>
     </li>

@@ -19,8 +19,10 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/') ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/') ?>css/style.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <!-- chart -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 </head>
 
 <body id="page-top">

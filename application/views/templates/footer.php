@@ -51,6 +51,9 @@
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+<!-- datatables -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
 <!-- ckeditor -->
 <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
 <script src="<?= base_url('assets/') ?>skins/n1theme/skin.js"></script>
@@ -78,7 +81,24 @@
         width: 720,
         height: 500
     });
+    CKEDITOR.replace('deskripsi_galeri', {
+        skin: 'office2013,<?= base_url('assets/') ?>skins/office2013/',
+        width: 720,
+        height: 200
+    });
 </script>
+
+<script>
+    datatable
+    $('#datatable').DataTable()
+</script>
+
+
+
+
+
+
+
 
 </body>
 
