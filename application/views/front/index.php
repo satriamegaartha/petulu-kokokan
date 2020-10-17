@@ -48,20 +48,36 @@
 
         <div class="home-content">
 
-            <div class="row home-content__main">
-
-                <h1>
-                    Desa Wisata Kokokan (Bangau) <br>
-                    Desa Petulu Ubud
-                </h1>
-
+            <div class="row home-content__main" style="padding-right: 0;">
+                <div class="col-md-6">
+                    <h1>
+                        Desa Wisata Kokokan<br>
+                        (Bangau)
+                        <hr style="    position: relative;
+                        top: 10px;
+                        border: none;
+                        height: 8px;
+                        background: white;
+                        margin-bottom: 25px;">
+                        Desa Petulu, Ubud
+                    </h1>
+                </div>
+                <div class="col-md-6" style="margin-top: 50px">
+                    <iframe width="460" height="215" src="https://www.youtube.com/embed/dBnUMbu37vM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <!-- <div class="home-content__button">
                     <a href="#about" class="smoothscroll btn btn-animatedbg">
                         More About Us
                     </a>
                 </div> -->
 
+                <!-- <div class="home-content__video" style="margin-left: 100px;"> -->
+                <!-- <a class="video-link" href="https://player.vimeo.com/video/117310401?color=01aef0&title=0&byline=0&portrait=0" data-lity>
+                        <span class="video-icon"></span>
+                        <span class="video-text">Play Video</span>
+                    </a> -->
 
+                <!-- </div> -->
             </div> <!-- end home-content__main -->
 
             <div class="home-content__scroll">
