@@ -25,6 +25,7 @@
                 <ul class="header-nav">
                     <li><a href="<?= base_url('front') ?>" title="home">Home</a></li>
                     <li><a href="<?= base_url('front/galeri') ?>" title="galeri">Galeri</a></li>
+                    <li><a href="<?= base_url('front/sejarah') ?>" title="sejarah">Sejarah</a></li>
                     <li><a href="<?= base_url('front/lokasi') ?>" title="lokasi">Lokasi</a></li>
                     <li><a href="<?= base_url('front/pengunjung') ?>" title="pengunjung">Pengunjung</a></li>
                     <li><a href="<?= base_url('auth') ?>" title="home">Halaman Admin</a></li>

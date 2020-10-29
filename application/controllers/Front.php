@@ -16,24 +16,27 @@ class Front extends CI_Controller
 		$data['galeri'] = $this->db->query($query)->result_array();
 
 
+		$periode = 'Bulanan';
 
+		$query_date = date('2019-01-01');
+		$tanggal_awal = date('Y-01-01', strtotime($query_date));
+		$tanggal_akhir = date('Y-12-31', strtotime($query_date));
 
+		if ($periode == 'Bulanan') {
 
-		$periode = 'Harian';
+			$query = "SELECT SUM(jumlah),bulan,tahun
+						FROM `pengunjung` 
+						WHERE `tanggal` >= '$tanggal_awal' AND `tanggal` <= '$tanggal_akhir' 
+						GROUP BY bulan
+						ORDER BY tanggal ASC";
+			$pengunjung = $this->db->query($query)->result_array();
 
-		$query_date = date('Y-m-d');
-		$tanggal_awal = date('Y-m-01', strtotime($query_date));
-		$tanggal_akhir = date('Y-m-t', strtotime($query_date));
-
-		if ($periode == 'Harian') {
-			$pengunjung = $this->db->order_by('tanggal', 'ASC')->get_where('pengunjung', ['tanggal >=' => $tanggal_awal, 'tanggal <=' => $tanggal_akhir])->result_array();
 			$tanggal_pengunjung = [];
 			$jumlah_pengunjung = [];
 			foreach ($pengunjung as $p) {
-				array_push($tanggal_pengunjung, date('d M Y', strtotime($p['tanggal'])));
-				array_push($jumlah_pengunjung, intval($p['jumlah']));
+				array_push($tanggal_pengunjung, $p['bulan']);
+				array_push($jumlah_pengunjung, intval($p['SUM(jumlah)']));
 			}
-
 			$data['tanggal_pengunjung'] = json_encode($tanggal_pengunjung);
 			$data['jumlah_pengunjung'] = json_encode($jumlah_pengunjung);
 
@@ -54,39 +57,40 @@ class Front extends CI_Controller
 
 		$data['provinsi'] = $this->db->get('provinsi')->result_array();
 
-		// SELECT SUM(jumlah),bulan,tahun
-		// FROM `pengunjung`
-		// GROUP BY tanggal
-		// SELECT SUM(jumlah),bulan,tahun FROM `pengunjung` WHERE `tanggal` > '2020-01-01' AND `tanggal` < '2020-12-31' GROUP BY bulan
-
 		$this->form_validation->set_rules('periode', 'Periode', 'required');
 		$this->form_validation->set_rules('provinsi', 'Provinsi', 'required');
 		$this->form_validation->set_rules('tanggal_awal', 'Tanggal Awal', 'required');
 		$this->form_validation->set_rules('tanggal_akhir', 'Tanggal Akhir', 'required');
 
 		if ($this->form_validation->run() == false) {
-			$periode = 'Harian';
 
-			$query_date = date('Y-m-d');
-			$tanggal_awal = date('Y-m-01', strtotime($query_date));
-			$tanggal_akhir = date('Y-m-t', strtotime($query_date));
+			$periode = 'Bulanan';
 
-			if ($periode == 'Harian') {
-				$pengunjung = $this->db->order_by('tanggal', 'ASC')->get_where('pengunjung', ['tanggal >=' => $tanggal_awal, 'tanggal <=' => $tanggal_akhir])->result_array();
+			$query_date = date('2019-01-01');
+			$tanggal_awal = date('Y-01-01', strtotime($query_date));
+			$tanggal_akhir = date('Y-12-31', strtotime($query_date));
+
+			if ($periode == 'Bulanan') {
+
+				$query = "SELECT SUM(jumlah),bulan,tahun
+						FROM `pengunjung` 
+						WHERE `tanggal` >= '$tanggal_awal' AND `tanggal` <= '$tanggal_akhir' 
+						GROUP BY bulan
+						ORDER BY tanggal ASC";
+				$pengunjung = $this->db->query($query)->result_array();
+
 				$tanggal_pengunjung = [];
 				$jumlah_pengunjung = [];
 				foreach ($pengunjung as $p) {
-					array_push($tanggal_pengunjung, date('d M Y', strtotime($p['tanggal'])));
-					array_push($jumlah_pengunjung, intval($p['jumlah']));
+					array_push($tanggal_pengunjung, $p['bulan']);
+					array_push($jumlah_pengunjung, intval($p['SUM(jumlah)']));
 				}
-
 				$data['tanggal_pengunjung'] = json_encode($tanggal_pengunjung);
 				$data['jumlah_pengunjung'] = json_encode($jumlah_pengunjung);
 
 				$data['subtitle'] = 'Periode: ' . date('d F Y', strtotime($tanggal_awal)) . ' - ' .  date('d F Y', strtotime($tanggal_akhir));
 				$data['periode'] = $periode;
 			}
-
 
 			$this->load->view('templates_front/header', $data);
 			$this->load->view('front/pengunjung', $data);
@@ -128,14 +132,14 @@ class Front extends CI_Controller
                             FROM `pengunjung` 
                             WHERE `tanggal` >= '$tanggal_awal' AND `tanggal` <= '$tanggal_akhir' 
                             GROUP BY bulan
-                            ORDER BY bulan DESC";
+                            ORDER BY tanggal ASC";
 					$pengunjung = $this->db->query($query)->result_array();
 				} else {
 					$query = "SELECT SUM(jumlah),bulan,tahun,provinsi_id
                             FROM `pengunjung` 
                             WHERE `tanggal` >= '$tanggal_awal' AND `tanggal` <= '$tanggal_akhir' AND `provinsi_id` = $provinsi
                             GROUP BY bulan, provinsi_id 
-                            ORDER BY bulan DESC";
+                            ORDER BY tanggal ASC";
 					$pengunjung = $this->db->query($query)->result_array();
 				}
 				// var_dump($pengunjung);
@@ -280,6 +284,22 @@ class Front extends CI_Controller
 		$this->load->view('templates_front/header', $data);
 		$this->load->view('front/lokasi', $data);
 		$this->load->view('templates_front/footer_grafik');
+		$this->load->view('templates_front/footer', $data);
+	}
+
+	public function sejarah()
+	{
+		$data['title'] = 'Dashboard';
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+		// $query = "SELECT `user`.* , `sejarah`.*
+		//             FROM `user` JOIN `sejarah`
+		//               ON `user`.`id` = `sejarah`.`user_id`                                                            
+		//     ";
+		// $data['sejarah'] = $this->db->query($query)->row_array();
+
+		$this->load->view('templates_front/header', $data);
+		$this->load->view('front/sejarah', $data);
 		$this->load->view('templates_front/footer', $data);
 	}
 }

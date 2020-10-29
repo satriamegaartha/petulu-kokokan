@@ -25,6 +25,7 @@
                 <ul class="header-nav">
                     <li><a href="<?= base_url('front') ?>" title="home">Home</a></li>
                     <li><a href="<?= base_url('front/galeri') ?>" title="galeri">Galeri</a></li>
+                    <li><a href="<?= base_url('front/sejarah') ?>" title="sejarah">Sejarah</a></li>
                     <li><a href="<?= base_url('front/lokasi') ?>" title="lokasi">Lokasi</a></li>
                     <li><a href="<?= base_url('front/pengunjung') ?>" title="pengunjung">Pengunjung</a></li>
                     <li><a href="<?= base_url('auth') ?>" title="home">Halaman Admin</a></li>
@@ -63,7 +64,7 @@
                     </h1>
                 </div>
                 <div class="col-md-6" style="margin-top: 50px">
-                    <iframe width="460" height="215" src="https://www.youtube.com/embed/dBnUMbu37vM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="460" height="215" src="https://www.youtube.com/embed/_fRjwwnS2H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <!-- <div class="home-content__button">
                     <a href="#about" class="smoothscroll btn btn-animatedbg">
@@ -113,39 +114,48 @@
             </div>
         </div>
 
-        <div class="portfolio block-1-4 block-m-1-3 block-tab-1-2 collapse">
+        <!-- <div class="portfolio block-1-4 block-m-1-3 block-tab-1-2 collapse"> -->
+        <div class="portfolio block-m-1-3 block-tab-1-2 collapse">
 
-            <?php foreach ($galeri as $g) : ?>
-                <div class="col-block item-folio" data-aos="fade-up">
-                    <div class="item-folio__thumb">
-                        <a href="<?= base_url('assets/img/galeri/') . $g['image'] ?>" class="thumb-link" title="Lamp" data-size="1050x700">
-                            <img src="<?= base_url('assets/img/galeri/') . $g['image'] ?>" srcset="<?= base_url('assets/img/galeri/thumbnail/') . $g['image'] ?> 1x" alt="">
-                        </a>
-                    </div>
+            <div class="container">
+                <div style="margin-left:130px;">
+                    <?php foreach ($galeri as $g) : ?>
+                        <div class="col-md-3" style="margin-bottom: 35px; padding:0;">
+                            <div class="col-block item-folio" data-aos="fade-up">
+                                <div class="item-folio__thumb">
+                                    <a href="<?= base_url('assets/img/galeri/') . $g['image'] ?>" class="thumb-link" title="" data-size="444x700">
+                                        <img src="" srcset="<?= base_url('assets/img/galeri/thumbnail/') . $g['image'] ?> 1x" alt="">
+                                    </a>
+                                </div>
 
-                    <div class="item-folio__text">
-                        <h3 class="item-folio__title">
-                            <?= $g['nama']; ?>
-                        </h3>
-                        <p class="item-folio__cat">
-                            <?= $g['jenis']; ?>
-                        </p>
-                    </div>
+                                <div class="item-folio__text">
+                                    <h3 class="item-folio__title">
+                                        <?= $g['nama']; ?>
+                                    </h3>
+                                    <p class="item-folio__cat">
+                                        <?= $g['jenis']; ?>
+                                    </p>
+                                </div>
 
-                    <a href="#" class="item-folio__project-link" title="Project link">
-                        Detail
-                    </a>
+                                <a href="#" class="item-folio__project-link" title="Project link">
+                                    Detail
+                                </a>
 
-                    <div class="item-folio__caption">
-                        <p><?= $g['deskripsi']; ?></p>
-                    </div>
-                </div> <!-- end item-folio -->
-            <?php endforeach; ?>
+                                <div class="item-folio__caption">
+                                    <p><?= $g['deskripsi']; ?></p>
+                                </div>
+                            </div> <!-- end item-folio -->
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
 
 
-        </div> <!-- end portfolio -->
+        </div>
+        <!-- end portfolio -->
 
     </section>
+
     <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/ubud.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
         <div class="testimonials-wrap" data-aos="fade-up">
 

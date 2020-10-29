@@ -57,7 +57,7 @@
                                     <td><?= $g['nama']; ?></td>
                                     <td><?= $g['jenis']; ?></td>
                                     <td>
-                                        <img src="<?= base_url('assets/img/galeri/thumbnail/') . $g['image'] ?>" class="img-thumbnail" width="200px">
+                                        <img src="<?= base_url('assets/img/galeri/thumbnail/') . $g['image'] ?>" class="img-thumbnail" width="224px" height="400px">
                                     </td>
                                     <td>
                                         <a href=" <?= base_url('user/galeriedit/') . $g['id'] ?>" class="btn btn-sm btn-warning">Edit</a>

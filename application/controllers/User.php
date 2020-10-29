@@ -19,38 +19,40 @@ class User extends CI_Controller
 
         $data['provinsi'] = $this->db->get('provinsi')->result_array();
 
-        // SELECT SUM(jumlah),bulan,tahun
-        // FROM `pengunjung`
-        // GROUP BY tanggal
-        // SELECT SUM(jumlah),bulan,tahun FROM `pengunjung` WHERE `tanggal` > '2020-01-01' AND `tanggal` < '2020-12-31' GROUP BY bulan
-
         $this->form_validation->set_rules('periode', 'Periode', 'required');
         $this->form_validation->set_rules('provinsi', 'Provinsi', 'required');
         $this->form_validation->set_rules('tanggal_awal', 'Tanggal Awal', 'required');
         $this->form_validation->set_rules('tanggal_akhir', 'Tanggal Akhir', 'required');
 
         if ($this->form_validation->run() == false) {
-            $periode = 'Harian';
+            $periode = 'Bulanan';
 
-            $query_date = date('Y-m-d');
-            $tanggal_awal = date('Y-m-01', strtotime($query_date));
-            $tanggal_akhir = date('Y-m-t', strtotime($query_date));
+            $query_date = date('2019-01-01');
+            $tanggal_awal = date('Y-01-01', strtotime($query_date));
+            $tanggal_akhir = date('Y-12-31', strtotime($query_date));
 
-            if ($periode == 'Harian') {
-                $pengunjung = $this->db->order_by('tanggal', 'ASC')->get_where('pengunjung', ['tanggal >=' => $tanggal_awal, 'tanggal <=' => $tanggal_akhir])->result_array();
+            if ($periode == 'Bulanan') {
+
+                $query = "SELECT SUM(jumlah),bulan,tahun
+                            FROM `pengunjung` 
+                            WHERE `tanggal` >= '$tanggal_awal' AND `tanggal` <= '$tanggal_akhir' 
+                            GROUP BY bulan
+                            ORDER BY tanggal ASC";
+                $pengunjung = $this->db->query($query)->result_array();
+
                 $tanggal_pengunjung = [];
                 $jumlah_pengunjung = [];
                 foreach ($pengunjung as $p) {
-                    array_push($tanggal_pengunjung, date('d M Y', strtotime($p['tanggal'])));
-                    array_push($jumlah_pengunjung, intval($p['jumlah']));
+                    array_push($tanggal_pengunjung, $p['bulan']);
+                    array_push($jumlah_pengunjung, intval($p['SUM(jumlah)']));
                 }
-
                 $data['tanggal_pengunjung'] = json_encode($tanggal_pengunjung);
                 $data['jumlah_pengunjung'] = json_encode($jumlah_pengunjung);
 
                 $data['subtitle'] = 'Periode: ' . date('d F Y', strtotime($tanggal_awal)) . ' - ' .  date('d F Y', strtotime($tanggal_akhir));
                 $data['periode'] = $periode;
             }
+
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
@@ -94,14 +96,14 @@ class User extends CI_Controller
                             FROM `pengunjung` 
                             WHERE `tanggal` >= '$tanggal_awal' AND `tanggal` <= '$tanggal_akhir' 
                             GROUP BY bulan
-                            ORDER BY bulan DESC";
+                            ORDER BY tanggal ASC";
                     $pengunjung = $this->db->query($query)->result_array();
                 } else {
                     $query = "SELECT SUM(jumlah),bulan,tahun,provinsi_id
                             FROM `pengunjung` 
                             WHERE `tanggal` >= '$tanggal_awal' AND `tanggal` <= '$tanggal_akhir' AND `provinsi_id` = $provinsi
                             GROUP BY bulan, provinsi_id 
-                            ORDER BY bulan DESC";
+                            ORDER BY tanggal ASC";
                     $pengunjung = $this->db->query($query)->result_array();
                 }
                 // var_dump($pengunjung);
@@ -690,8 +692,8 @@ class User extends CI_Controller
                 $config['maintain_ratio'] = FALSE;
                 // $config['width'] = 350;
                 // $config['height'] = 350;
-                $config['width'] = 384;
-                $config['height'] = 256;
+                $config['width'] = 224;
+                $config['height'] = 400;
                 $config['new_image'] = './assets/img/galeri/thumbnail/' . $gbr['file_name'];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2020 at 04:44 PM
+-- Generation Time: Oct 29, 2020 at 08:24 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -43,16 +43,14 @@ CREATE TABLE `galeri` (
 --
 
 INSERT INTO `galeri` (`id`, `user_id`, `nama`, `jenis_burung_id`, `deskripsi`, `image`, `date_created`) VALUES
-(1, 1, 'Burung Kokokan type 1', '2', '<p>loremLorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iure inventore blanditiis nulla asperiores delectus consequuntur quam aspernatur corporis ipsa doloremque officiis, assumenda exercitationem maxime quisquam recusandae ipsum velit laborum?</p>', 'carlos-alberto-gomez-iniguez-253158-unsplash.jpg', '2020-10-15 22:26:26'),
-(4, 0, 'hedwig', '2', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'amy-humphries-1665067-unsplash.jpg', '2020-10-15 23:18:39'),
-(5, 0, 'Burung Kokokan type 3', '1', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'clay-banks-170882-unsplash.jpg', '2020-10-16 15:06:57'),
-(6, 0, 'Burung Kokokan type 4', '2', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'frank-mckenna-231181-unsplash.jpg', '2020-10-16 15:07:16'),
-(7, 0, 'Burung Kokokan type 5', '1', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'nick-baker-98364-unsplash.jpg', '2020-10-16 15:07:37'),
-(8, 0, 'Burung Kokokan type 6', '2', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'carlos-alberto-gomez-iniguez-253158-unsplash1.jpg', '2020-10-16 15:09:24'),
-(9, 0, 'Burung Kokokan type 7', '1', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'anthony-delanoix-hzgs56Ze49s-unsplash.jpg', '2020-10-16 15:09:39'),
-(10, 0, 'Burung Kokokan type 8', '2', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'kace-rodriguez-80992-unsplash.jpg', '2020-10-16 15:10:00'),
-(11, 0, 'Burung Kokokan type 9', '1', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'nick-baker-98364-unsplash1.jpg', '2020-10-16 15:10:22'),
-(12, 0, 'Burung Kokokan type 10', '2', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit,&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Minima&nbsp;molestias&nbsp;perspiciatis&nbsp;saepe&nbsp;atque,&nbsp;deleniti&nbsp;facilis&nbsp;at&nbsp;dolores&nbsp;error&nbsp;possimus&nbsp;delectus&nbsp;eaque&nbsp;obcaecati&nbsp;voluptatibus&nbsp;quaerat&nbsp;veniam&nbsp;totam&nbsp;minus&nbsp;qui&nbsp;reiciendis&nbsp;distinctio.</p>', 'amy-humphries-1665067-unsplash1.jpg', '2020-10-16 15:11:01');
+(15, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0017.JPG', '2020-10-29 14:10:22'),
+(16, 0, 'Blekok', '3', '<p>-</p>', '_MG_0045.JPG', '2020-10-29 14:10:45'),
+(17, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0046.JPG', '2020-10-29 14:11:06'),
+(18, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0077.JPG', '2020-10-29 14:11:26'),
+(19, 0, 'Blekok', '3', '<p>-</p>', '_MG_9996.JPG', '2020-10-29 14:11:43'),
+(20, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0038.JPG', '2020-10-29 14:14:06'),
+(21, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_9880.JPG', '2020-10-29 14:15:43'),
+(22, 0, 'Blekok', '3', '<p>-</p>', '_MG_0007.JPG', '2020-10-29 14:18:08');
 
 -- --------------------------------------------------------
 
@@ -70,8 +68,9 @@ CREATE TABLE `jenis_burung` (
 --
 
 INSERT INTO `jenis_burung` (`id`, `jenis`) VALUES
-(1, 'Burung Kokokan'),
-(2, 'Buwwwung Puyuh');
+(1, 'Kokokan'),
+(2, 'Bangau-Bangau'),
+(3, 'Blekok');
 
 -- --------------------------------------------------------
 
@@ -119,22 +118,18 @@ CREATE TABLE `pengunjung` (
 --
 
 INSERT INTO `pengunjung` (`id`, `provinsi_id`, `nama_provinsi`, `jumlah`, `tanggal`, `bulan`, `tahun`) VALUES
-(1, 75, 'Gorontalo', 911, '2019-12-10', 'December', 2019),
-(2, 51, 'Bali', 105, '2019-12-18', 'December', 2019),
-(4, 11, 'Aceh', 45, '2020-09-16', 'September', 2020),
-(5, 51, 'Bali', 999, '2020-09-22', 'September', 2020),
-(6, 33, 'Jawa Tengah', 123, '2020-10-15', 'October', 2020),
-(7, 16, 'Sumatera Selatan', 233, '2020-10-14', 'October', 2020),
-(8, 11, 'Aceh', 233, '2020-10-16', 'October', 2020),
-(10, 11, 'Aceh', 45, '2020-10-19', 'October', 2020),
-(12, 11, 'Aceh', 45, '2020-11-18', 'November', 2020),
-(13, 92, 'Papua', 1500, '2020-11-18', 'November', 2020),
-(14, 91, 'Papua Barat', 1233, '2020-11-17', 'November', 2020),
-(16, 11, 'Aceh', 444, '2020-12-16', 'December', 2020),
-(17, 31, 'DKI Jakarta', 99, '2020-10-24', 'October', 2020),
-(18, 32, 'Jawa Barat', 123, '2020-10-26', 'October', 2020),
-(19, 13, 'Sumatera Barat', 9, '2020-10-22', 'October', 2020),
-(20, 11, 'Aceh', 500, '2019-11-16', 'November', 2019);
+(22, 51, 'Bali', 400, '2019-01-31', 'January', 2019),
+(23, 51, 'Bali', 230, '2019-02-28', 'February', 2019),
+(24, 51, 'Bali', 239, '2019-03-31', 'March', 2019),
+(25, 51, 'Bali', 371, '2019-04-30', 'April', 2019),
+(26, 51, 'Bali', 348, '2019-05-31', 'May', 2019),
+(27, 51, 'Bali', 370, '2019-06-30', 'June', 2019),
+(28, 51, 'Bali', 364, '2019-07-31', 'July', 2019),
+(29, 51, 'Bali', 509, '2019-08-31', 'August', 2019),
+(30, 51, 'Bali', 394, '2019-09-30', 'September', 2019),
+(31, 51, 'Bali', 354, '2019-10-31', 'October', 2019),
+(32, 51, 'Bali', 250, '2019-11-30', 'November', 2019),
+(33, 51, 'Bali', 229, '2019-12-31', 'December', 2019);
 
 -- --------------------------------------------------------
 
@@ -207,7 +202,7 @@ CREATE TABLE `sejarah` (
 --
 
 INSERT INTO `sejarah` (`id`, `user_id`, `judul`, `deskripsi`, `image`, `date`) VALUES
-(1, 1, 'Sejarah Desa Petulu', '<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>&nbsp;Ada berbagai cerita rakyat yang menyatakan bahwa petulu gunung merupakan gunung dari wilayah kekuasaan Raja Sukawati. Nama ini diberikan oleh Cokorda Gunung, anak raja sukawat,i kira-kira abad ke-15. Raja Sukawati menempatkan soroh (warga) bendesa untuk bermukim dan membangun Desa petulu gunung. Karena wilayah sangat lebar atau bet, maka wilayah itu dibesebut bet dulu, kemudian menjadi petulu. Wilayah yang paling utara diberi nama Petulu Gunung. Disebut Gunung karena letaknya di ujung dan datarannya paling tinggi.</strong></p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Wilayah petulu gunung sangat terisolir, jalannya buntu dan sulit dijangkau. Kehidupan masyarakatnya sangat miskin karena kurangnya pekerjaan serta sempitnya lahan sawah yang digarap masyarakat. Sehingga dalam usaha untuk melangsukan kehidupan, masyarakat petulu gunung banyak merantau keluar wilayah untuk mendapat pekerjaan maupun sumber pangan seperti, beras, kopi, dan ketela. Mereka banyak pergi kewilayah Singaraja untuk ngorek kopi dan ke wilayah Tabanan untuk munuh padi serta wilayah Bangli untuk munuh ketela. Tiga wilayah ini selalu mereka datangi setelah musim panen tiba. Mereka akan kembali setelah mendapatkan hasil atau pada waktu piodalan maupun hari raya Galungan dan kuningan.</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Melihat fenomena ini masyarakat petulu gunung berfikir bahwa apa yang dialami merupakan suatu kejadian yang disebabkan oleh kurangnya yadnya yang dihaturkan pada Hyang Maha Kuasa. Untuk menanggulangi keadaan tersebut, masyarakat berencana untuk melaksanakan upacara besar di Pura Desa yaitu : mependem, mepedagingan, mebalik sumpah, dan ngenteg linggih. Mereka sangat percaya dengan melaksanakan upacara besar ini masyarakat petulu gunung akan hidup damai dan sejahtera.</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dengan dukungan yang sangat besar dari Puri Ubud, maka ditetapkannya upacara tersebut pada hari sabtu kliwon landep. Masyarakat mulai ngayah untuk mempersiapkan segala sesuatu yang berkaitan dengan keperluan upacara seperti : rerampe (janur, bambu), pedagingan (beras, telur), dan wewalungan (binatang kurban). Ketika masyarakat ngayah, beberapa orang diantara mereka melihat empat ekor burung kokokan di atas pohon di depan rumah mangku desa. Mereka tidak mempunyai firasat apa-apa bahwa burung itu akan menjadi penghuni desanya.</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Tanggal 25 Oktober 1965 merupakan puncak acara ngenteg linggih di pura desa yang tentunya diawali terlebih dahulu dengan upacara besar seperti : melasti, mepedanan, mepedagingan, mepada. Upacara dapat terlaksana dengan khusuk, khidmat, damai, dan lancar walaupun pada masa persiapan diliputi dengan suasana yang sangat tegang karena suhu politik yang sedang memanas yaitu G30S/PKI yang sering disebut dengan GESTAPU/GESTOK. Tapi berkat kuasa Hyang Widhi mereka dapat melaksanakan yadnya yang besar itu dengan lancar.</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Tepat tanggal 7 November 1965, upacara berakhir dan Ida Bhatara mesineb. Bersamaan dengan itu datanglah segerombolan burung kokokan bertengger dan bersarang di atas pepohonan yang tumbuh di ambal-ambal rumah penduduk. Melihat banyaknya burung kokokan yang datang, masyarakat mempercayai bahwa burung tersebut merupakan pica Ida Bhatara Desa. Burung kokokan ini merupakan salah satu peliharaan dari Pura Desa yang patut dipelihara dan disucikan. Akhirnya burung kokokan tersebut dijemput (dipendak) oleh seluruh masyarakat dengan upacara khusus di Pura Desa. Dari keyakinan&nbsp;&nbsp;tersebut masyarakat petulu gunung memelihara burung kokokan tersebut dengan taat dan tidak ada yang berani mengganggunya. Mereka percaya apabila mereka mengganggu burung kokokan akan berakibat fatal bagi kehidupan dirinya maupun kehidupan tanamannya yang ada di sawah. Kejadian ini sudah sering dibuktikan dengan adanya tanaman padi yang dirusak burung kokokan, orang jatuh pingsan karena menembak burung kokokan, orang yang minta maaf (neduh) karena mengambil anak kokokan tanpa permisi. Maka untuk menjaga keamanan dan kelestarian burung kokokan masyarakat petulu gunung membuat hukum (awig-awig) khusus yang berkaitan dengan keberadaan burung kokokan yang harus ditaati oleh seluruh masyarakat.&nbsp;</p>\r\n', 'petulu.jpg', '2020-10-15 09:21:47');
+(1, 1, 'Sejarah Desa Petulu', '<p>-</p>\r\n', '_MG_99961.JPG', '2020-10-15 09:21:47');
 
 -- --------------------------------------------------------
 
@@ -287,13 +282,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `jenis_burung`
 --
 ALTER TABLE `jenis_burung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lokasi`
@@ -305,7 +300,7 @@ ALTER TABLE `lokasi`
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `sejarah`
