@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2020 at 08:24 AM
+-- Generation Time: Oct 30, 2020 at 06:50 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -43,14 +43,22 @@ CREATE TABLE `galeri` (
 --
 
 INSERT INTO `galeri` (`id`, `user_id`, `nama`, `jenis_burung_id`, `deskripsi`, `image`, `date_created`) VALUES
-(15, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0017.JPG', '2020-10-29 14:10:22'),
-(16, 0, 'Blekok', '3', '<p>-</p>', '_MG_0045.JPG', '2020-10-29 14:10:45'),
-(17, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0046.JPG', '2020-10-29 14:11:06'),
-(18, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0077.JPG', '2020-10-29 14:11:26'),
-(19, 0, 'Blekok', '3', '<p>-</p>', '_MG_9996.JPG', '2020-10-29 14:11:43'),
-(20, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0038.JPG', '2020-10-29 14:14:06'),
-(21, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_9880.JPG', '2020-10-29 14:15:43'),
-(22, 0, 'Blekok', '3', '<p>-</p>', '_MG_0007.JPG', '2020-10-29 14:18:08');
+(24, 0, 'Kokokan', '1', '<p>testtesttesttesttesttesttesttest</p>', '_MG_0007.JPG', '2020-10-30 13:18:50'),
+(25, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0017.JPG', '2020-10-30 13:19:06'),
+(26, 0, 'Blekok', '3', '<p>-</p>', '_MG_0197.JPG', '2020-10-30 13:23:24'),
+(27, 0, 'Blekok', '3', '<p>-</p>', '_MG_0199.JPG', '2020-10-30 13:23:43'),
+(28, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0014.JPG', '2020-10-30 13:26:50'),
+(29, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0024.JPG', '2020-10-30 13:27:06'),
+(30, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0038.JPG', '2020-10-30 13:27:38'),
+(31, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0045.JPG', '2020-10-30 13:29:04'),
+(32, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0055.JPG', '2020-10-30 13:29:29'),
+(33, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_0056.JPG', '2020-10-30 13:29:42'),
+(34, 0, 'Bangau-Bangau', '2', '<p>-</p>', '_MG_9864.JPG', '2020-10-30 13:29:54'),
+(35, 0, 'Blekok', '3', '<p>-</p>', '_MG_0207.JPG', '2020-10-30 13:30:14'),
+(36, 0, 'Blekok', '3', '<p>-</p>', '_MG_0241.JPG', '2020-10-30 13:30:27'),
+(37, 0, 'Blekok', '3', '<p>-</p>', '_MG_0257.JPG', '2020-10-30 13:30:43'),
+(38, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0046.JPG', '2020-10-30 13:31:07'),
+(39, 0, 'Kokokan', '1', '<p>-</p>', '_MG_0077.JPG', '2020-10-30 13:31:35');
 
 -- --------------------------------------------------------
 
@@ -282,7 +290,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `jenis_burung`
