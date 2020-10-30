@@ -99,7 +99,7 @@
             <div class="col-full">
                 <h3 data-num="01" class="subhead">Galeri</h3>
                 <h1 class="display-1 ">
-                    Buwung Puyuh?
+                    Burung Puyuh?
                     Bukan, ini Burung Kokokan :)
                 </h1>
 
