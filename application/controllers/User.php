@@ -702,4 +702,230 @@ class User extends CI_Controller
             //            
         }
     }
+
+
+    public function galeridesa()
+    {
+
+        $data['title'] = 'Dashboard';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('jenis_galeri_desa', 'jenis_galeri_desa', 'required');
+
+        if ($this->form_validation->run() == false) {
+
+            $data['jenis_galeri_desa'] = $this->db->get('jenis_galeri_desa')->result_array();
+
+            $query = "SELECT `jenis_galeri_desa`.* , `galeri_desa`.*
+                    FROM `jenis_galeri_desa` JOIN `galeri_desa`
+                    ON `jenis_galeri_desa`.`id` = `galeri_desa`.`jenis_galeri_desa_id`                                                            
+                ";
+            $data['galeri_desa'] = $this->db->query($query)->result_array();
+
+            // var_dump($data['galeri_desa']);
+            // die;
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('user/galeridesa', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $jenis_galeri_desa = $this->input->post('jenis_galeri_desa');
+
+            $data['jenis_galeri_desa'] = $this->db->get('jenis_galeri_desa')->result_array();
+
+            if ($jenis_galeri_desa == 'All') {
+                $query = "SELECT `jenis_galeri_desa`.* , `galeri_desa`.*
+							FROM `jenis_galeri_desa` JOIN `galeri_desa`
+							ON `jenis_galeri_desa`.`id` = `galeri_desa`.`jenis_galeri_desa_id`  					                  
+						";
+                $data['galeri_desa'] = $this->db->query($query)->result_array();
+            } else {
+                $query = "SELECT `jenis_galeri_desa`.* , `galeri_desa`.*
+						FROM `jenis_galeri_desa` JOIN `galeri_desa`
+						ON `jenis_galeri_desa`.`id` = `galeri_desa`.`jenis_galeri_desa_id`  
+						WHERE `galeri_desa`.`jenis_galeri_desa_id` = $jenis_galeri_desa					                  
+					";
+                $data['galeri_desa'] = $this->db->query($query)->result_array();
+            }
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('user/galeridesa', $data);
+            $this->load->view('templates/footer');
+        }
+    }
+
+    public function galeridesaadd()
+    {
+        $data['title'] = 'Add Data Galeri Desa';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('nama', 'nama', 'required|trim');
+        $this->form_validation->set_rules('jenis_galeri_desa', 'jenis_galeri_desa', 'required|trim');
+        $this->form_validation->set_rules('deskripsi_galeri', 'Deskripsi Galeri', 'required|trim');
+        // $this->form_validation->set_rules('image', 'image', 'required');
+
+
+        if ($this->form_validation->run() == false) {
+
+            $data['jenis_galeri_desa'] = $this->db->get('jenis_galeri_desa')->result_array();
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('user/galeridesaadd', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $nama = $this->input->post('nama');
+            $deskripsi = $this->input->post('deskripsi_galeri');
+            $jenis_galeri_desa = $this->input->post('jenis_galeri_desa');
+            // $image = $this->input->post('image');
+
+            // check jika ada gambar yang akan di upload
+            $upload_image = $_FILES['image']['name'];
+
+            if ($upload_image) {
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size'] = '2048';
+                $config['upload_path'] = './assets/img/galeri/';
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('image')) {
+                    // hapus gambar lama 
+                    // $old_image = $this->input->post('old_image');
+                    // if ($old_image != 'sejarah.jpg') {
+                    // unlink(FCPATH . 'assets/img/galeri/' . $old_image);
+                    // unlink(FCPATH . 'assets/img/galeri/thumbnail/' . $old_image);
+                    // }
+                    $new_image = $this->upload->data('file_name');
+                    // $this->db->set('image', $new_image);
+                    $this->upload_image_desa();
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+            // var_dump($this->input->post('jenis_galeri_desa'));
+            // die;
+            $data = [
+                'nama' => $this->input->post('nama'),
+                'deskripsi' => $this->input->post('deskripsi_galeri'),
+                'jenis_galeri_desa_id' => $this->input->post('jenis_galeri_desa'),
+                'image' => $new_image,
+            ];
+
+            $this->db->insert('galeri_desa', $data);
+
+            $this->session->set_flashdata('success', 'Data berhasil ditambah');
+            redirect('user/galeridesa');
+        }
+    }
+
+    public function galeridesaedit($id)
+    {
+        $data['title'] = 'Edit Data Galeri';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('nama', 'nama', 'required|trim');
+        $this->form_validation->set_rules('jenis_galeri_desa', 'jenis_galeri_desa', 'required|trim');
+        $this->form_validation->set_rules('deskripsi_galeri', 'Deskripsi Galeri', 'required|trim');
+        $this->form_validation->set_rules('image', 'image', '');
+
+        if ($this->form_validation->run() == false) {
+
+            $data['jenis_galeri_desa'] = $this->db->get('jenis_galeri_desa')->result_array();
+            $data['galeri_desa'] = $this->db->get_where('galeri_desa', ['id' => $id])->row_array();
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('user/galeridesaedit', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $id = $this->input->post('id');
+            $nama = $this->input->post('nama');
+            $deskripsi = $this->input->post('deskripsi_galeri');
+            $jenis_galeri_desa = $this->input->post('jenis_galeri_desa');
+            // $image = $this->input->post('image');
+
+            // check jika ada gambar yang akan di upload
+            $upload_image = $_FILES['image']['name'];
+
+            if ($upload_image) {
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size'] = '2048';
+                $config['upload_path'] = './assets/img/galeri/';
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('image')) {
+                    // hapus gambar lama 
+                    $old_image = $this->input->post('old_image');
+                    // if ($old_image != 'sejarah.jpg') {
+                    unlink(FCPATH . 'assets/img/galeri/' . $old_image);
+                    unlink(FCPATH . 'assets/img/galeri/thumbnail/' . $old_image);
+                    // }
+                    $new_image = $this->upload->data('file_name');
+                    $this->db->set('image', $new_image);
+                    $this->upload_image_desa();
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            $this->db->set('nama', $nama);
+            $this->db->set('jenis_galeri_desa_id', $jenis_galeri_desa);
+            $this->db->set('deskripsi', $deskripsi);
+            // $this->db->set('image', $image);
+            $this->db->where('id', $id);
+            $this->db->update('galeri_desa');
+
+
+
+            $this->session->set_flashdata('success', 'Data berhasil diubah');
+            redirect('user/galeridesa');
+        }
+    }
+
+    public function upload_image_desa()
+    {
+        $config['upload_path'] = './assets/img/galeri/thumbnail/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan        
+
+        $this->upload->initialize($config);
+
+        if (!empty($_FILES['image']['name'])) {
+
+            if ($this->upload->do_upload('image')) {
+                $gbr = $this->upload->data();
+                //Compress Image
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/img/galeri/' . $gbr['file_name'];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = FALSE;
+                // $config['width'] = 350;
+                // $config['height'] = 350;
+                $config['width'] = 384;
+                $config['height'] = 256;
+                $config['new_image'] = './assets/img/galeri/thumbnail/' . $gbr['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+            }
+        } else {
+            //            
+        }
+    }
+    public function galeridesadelete($id)
+    {
+        $galeri = $this->db->get_where('galeri_desa', ['id' => $id])->row_array();
+        $old_image = $galeri['image'];
+        unlink(FCPATH . 'assets/img/galeri/' . $old_image);
+        unlink(FCPATH . 'assets/img/galeri/thumbnail/' . $old_image);
+        $this->db->delete('galeri_desa', ['id' => $id]);
+        $this->session->set_flashdata('warning', 'Data berhasil dihapus');
+        redirect('user/galeridesa');
+    }
 }

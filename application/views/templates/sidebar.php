@@ -33,7 +33,13 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('user/galeri') ?>">
             <i class="fas fa-fw fa-images"></i>
-            <span>Galeri</span></a>
+            <span>Galeri Burung</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('user/galeridesa') ?>">
+            <i class="fas fa-fw fa-camera"></i>
+            <span>Galeri Desa</span></a>
     </li>
 
     <li class="nav-item">

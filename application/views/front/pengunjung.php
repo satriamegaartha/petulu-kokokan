@@ -17,16 +17,13 @@
 
         <div class="row">
 
-            <div class="header-logo">
-                <a class="site-logo" href="<?= base_url('front') ?>"><img src="<?= base_url('assets_front/'); ?>images/logo.svg" alt="Homepage"></a>
-            </div>
-
-            <nav class="header-nav-wrap">
+            <nav class="header-nav-wrap" style="margin-left: -170px;">
                 <ul class="header-nav">
                     <li><a href="<?= base_url('front') ?>" title="home">Home</a></li>
                     <li><a href="<?= base_url('front/galeri') ?>" title="galeri">Galeri</a></li>
                     <li><a href="<?= base_url('front/sejarah') ?>" title="sejarah">Sejarah</a></li>
                     <li><a href="<?= base_url('front/lokasi') ?>" title="lokasi">Lokasi</a></li>
+                    <li><a href="<?= base_url('front/galeridesa') ?>" title="galeridesa">Galeri Desa</a></li>
                     <li><a href="<?= base_url('front/pengunjung') ?>" title="pengunjung">Pengunjung</a></li>
                     <li><a href="<?= base_url('auth') ?>" title="home">Halaman Admin</a></li>
                 </ul>
@@ -77,11 +74,10 @@
 
     <!-- works
     ================================================== -->
-    <section id="works" class="s-works target-section">
-
-        <div class="row section-header" data-aos="fade-up">
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/kuning.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center style="padding-top: 40px;">
+        <div class="row section-header" data-aos="fade-up" style="color: white;" style="margin-top: 40px;">
             <div class="col-full">
-                <h3 data-num="03" class="subhead">Data Pengunjung</h3>
+                <h3 data-num="04" class="subhead">Data Pengunjung</h3>
                 <h1 class="display-1">
                     <!-- Pengunjung Desa Wisata Kokokan banyak loh. Yuk kita lihat grafik dibawah. -->
                 </h1>
@@ -92,10 +88,10 @@
                         <div class="col-md-3">
                             <div class="form-group row">
                                 <label for="periode" class="col-form-label">
-                                    <h5>Periode</h5>
+                                    <h5 style="color: white;">Periode</h5>
                                 </label>
                                 <div class="" style="margin-left: 20px;">
-                                    <select class="form-control" id="" name="periode">
+                                    <select class="form-control" id="" name="periode" style="background: white;">
 
                                         <option value="Harian" <?= ("Harian" == set_value('periode')) ? 'selected="selected"' : '' ?>> Harian </option>
                                         <option value="Bulanan" <?= ("Bulanan" == set_value('periode')) ? 'selected="selected"' : '' ?>> Bulanan </option>
@@ -110,10 +106,10 @@
                         <div class="col-md-3">
                             <div class="form-group row">
                                 <label for="provinsi" class="col-form-label">
-                                    <h5>Provinsi</h5>
+                                    <h5 style="color: white;">Provinsi</h5>
                                 </label>
                                 <div class="" style="margin-left: 20px;">
-                                    <select class="form-control" id="" name="provinsi">
+                                    <select class="form-control" id="" name="provinsi" style="background: white;">
                                         <option value="All" <?= ('All' == set_value('provinsi')) ? 'selected="selected"' : '' ?>> Seluruh Provinsi </option>
                                         <?php foreach ($provinsi as $p) : ?>
                                             <option value="<?= $p['id'] ?>" <?= ($p['id'] == set_value('provinsi')) ? 'selected="selected"' : '' ?>> <?= $p['nama_provinsi'] ?> </option>
@@ -127,7 +123,7 @@
                         <div class="col-md-3">
                             <div class="form-group row">
                                 <label for="tanggal_awal" class=" col-form-label">
-                                    <h5>Tanggal Awal</h5>
+                                    <h5 style="color: white;">Tanggal Awal</h5>
                                 </label>
                                 <div class="" style="margin-left: 20px;">
                                     <input type="date" class="form-control" id="tanggal_awal" name="tanggal_awal" value="<?= set_value('tanggal_awal') ?>">
@@ -138,7 +134,7 @@
                         <div class="col-md-3">
                             <div class="form-group row">
                                 <label for="tanggal_akhir" class="col-form-label">
-                                    <h5>Tanggal Akhir</h5>
+                                    <h5 style="color: white;">Tanggal Akhir</h5>
                                 </label>
                                 <div class="" style="margin-left: 20px;">
                                     <input type="date" class="form-control" id="tanggal_akhir" name="tanggal_akhir" value="<?= set_value('tanggal_akhir') ?>">
@@ -160,7 +156,7 @@
             </div>
         </div>
 
-        <div class="row services-list block-1-3 block-m-1-2 block-tab-full">
+        <div class="row services-list block-1-3 block-m-1-2 block-tab-full" style="margin-bottom: 40px;">
 
             <div id="chartPengunjung"></div>
         </div>

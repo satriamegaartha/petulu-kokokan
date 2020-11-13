@@ -17,10 +17,6 @@
 
         <div class="row">
 
-            <div class="header-logo">
-                <a class="site-logo" href="<?= base_url('front') ?>"><img src="<?= base_url('assets_front/'); ?>images/logo.svg" alt="Homepage"></a>
-            </div>
-
             <nav class="header-nav-wrap">
                 <ul class="header-nav">
                     <li><a href="<?= base_url('front') ?>" title="home">Home</a></li>

@@ -15,6 +15,13 @@ class Front extends CI_Controller
 				";
 		$data['galeri'] = $this->db->query($query)->result_array();
 
+		$query = "SELECT `jenis_galeri_desa`.* , `galeri_desa`.*
+					FROM `jenis_galeri_desa` JOIN `galeri_desa`
+					ON `jenis_galeri_desa`.`id` = `galeri_desa`.`jenis_galeri_desa_id`  
+					LIMIT 8                                                          
+				";
+		$data['galeri_desa'] = $this->db->query($query)->result_array();
+
 
 		$periode = 'Bulanan';
 
@@ -301,5 +308,51 @@ class Front extends CI_Controller
 		$this->load->view('templates_front/header', $data);
 		$this->load->view('front/sejarah', $data);
 		$this->load->view('templates_front/footer', $data);
+	}
+
+	public function galeridesa()
+	{
+
+		$this->form_validation->set_rules('jenis_galeri_desa', 'jenis_galeri_desa', 'required');
+
+
+		if ($this->form_validation->run() == false) {
+			$data['jenis_galeri_desa'] = $this->db->get('jenis_galeri_desa')->result_array();
+
+			$query = "SELECT `jenis_galeri_desa`.* , `galeri_desa`.*
+					FROM `jenis_galeri_desa` JOIN `galeri_desa`
+					ON `jenis_galeri_desa`.`id` = `galeri_desa`.`jenis_galeri_desa_id`  					                  
+				";
+			$data['galeri_desa'] = $this->db->query($query)->result_array();
+
+
+			$this->load->view('templates_front/header', $data);
+			$this->load->view('front/galeridesa', $data);
+			$this->load->view('templates_front/footer', $data);
+		} else {
+			$jenis_galeri_desa = $this->input->post('jenis_galeri_desa');
+
+			$data['jenis_galeri_desa'] = $this->db->get('jenis_galeri_desa')->result_array();
+
+			if ($jenis_galeri_desa == 'All') {
+				$query = "SELECT `jenis_galeri_desa`.* , `galeri_desa`.*
+							FROM `jenis_galeri_desa` JOIN `galeri_desa`
+							ON `jenis_galeri_desa`.`id` = `galeri_desa`.`jenis_galeri_desa_id`  					                  
+						";
+				$data['galeri_desa'] = $this->db->query($query)->result_array();
+			} else {
+				$query = "SELECT `jenis_galeri_desa`.* , `galeri_desa`.*
+						FROM `jenis_galeri_desa` JOIN `galeri_desa`
+						ON `jenis_galeri_desa`.`id` = `galeri_desa`.`jenis_galeri_desa_id`  
+						WHERE `galeri_desa`.`jenis_galeri_desa_id` = $jenis_galeri_desa					                  
+					";
+				$data['galeri_desa'] = $this->db->query($query)->result_array();
+			}
+
+			$data['jenis_selected'] = $jenis_galeri_desa;
+			$this->load->view('templates_front/header', $data);
+			$this->load->view('front/galeridesa', $data);
+			$this->load->view('templates_front/footer', $data);
+		}
 	}
 }

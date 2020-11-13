@@ -83,21 +83,18 @@
             </div>
         </div>
         <div class="row">
-            <?php echo form_open_multipart('front/galeri/') ?>
+            <?php echo form_open_multipart('front/galeridesa/') ?>
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group row">
-                        <label for="jenis_burung" class="col-form-label">
-                            <h5>Jenis Burung</h5>
-                        </label>
                         <div class="" style="margin-left: 20px;">
-                            <select class="form-control" id="" name="jenis_burung">
-                                <option value="All" <?= ('All' == set_value('jenis_burung')) ? 'selected="selected"' : '' ?>> Seluruh Jenis</option>
-                                <?php foreach ($jenis_burung as $p) : ?>
-                                    <option value="<?= $p['id'] ?>" <?= ($p['id'] == set_value('jenis_burung')) ? 'selected="selected"' : '' ?>> <?= $p['jenis'] ?> </option>
+                            <select class="form-control" id="" name="jenis_galeri_desa">
+                                <option value="All" <?= ('All' == set_value('jenis_galeri_desa')) ? 'selected="selected"' : '' ?>> Seluruh Jenis</option>
+                                <?php foreach ($jenis_galeri_desa as $p) : ?>
+                                    <option value="<?= $p['id'] ?>" <?= ($p['id'] == set_value('jenis_galeri_desa')) ? 'selected="selected"' : '' ?>> <?= $p['jenis'] ?> </option>
                                 <?php endforeach; ?>
                             </select>
-                            <?= form_error('jenis_burung', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <?= form_error('jenis_galeri_desa', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
                 </div>
@@ -109,40 +106,37 @@
         </div>
 
         <!-- <div class="portfolio block-1-4 block-m-1-3 block-tab-1-2 collapse"> -->
-        <div class="portfolio block-m-1-3 block-tab-1-2 collapse">
+        <div class="portfolio block-1-4 block-m-1-3 block-tab-1-2 collapse">
 
-            <div class="container">
-                <div style="margin-left:130px;">
-                    <?php foreach ($galeri as $g) : ?>
-                        <div class="col-md-3" style="margin-bottom: 35px; padding:0;">
-                            <div class="col-block item-folio" data-aos="fade-up">
-                                <div class="item-folio__thumb">
-                                    <a href="<?= base_url('assets/img/galeri/') . $g['image'] ?>" class="thumb-link" title="" data-size="444x700">
-                                        <img src="" srcset="<?= base_url('assets/img/galeri/thumbnail/') . $g['image'] ?> 1x" alt="">
-                                    </a>
-                                </div>
+            <?php foreach ($galeri_desa as $g) : ?>
 
-                                <div class="item-folio__text">
-                                    <h3 class="item-folio__title">
-                                        <?= $g['nama']; ?>
-                                    </h3>
-                                    <p class="item-folio__cat">
-                                        <?= $g['jenis']; ?>
-                                    </p>
-                                </div>
+                <div class="col-block item-folio" data-aos="fade-up" style="padding: 8px;">
+                    <div class="item-folio__thumb">
+                        <a href="<?= base_url('assets/img/galeri/') . $g['image'] ?>" class="thumb-link" title="" data-size="1050x700">
+                            <img src="" srcset="<?= base_url('assets/img/galeri/thumbnail/') . $g['image'] ?> 1x" alt="">
+                        </a>
+                    </div>
 
-                                <a href="#" class="item-folio__project-link" title="Project link">
-                                    Detail
-                                </a>
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">
+                            <?= $g['nama']; ?>
+                        </h3>
+                        <p class="item-folio__cat">
+                            <?= $g['jenis']; ?>
+                        </p>
+                    </div>
 
-                                <div class="item-folio__caption">
-                                    <p><?= $g['deskripsi']; ?></p>
-                                </div>
-                            </div> <!-- end item-folio -->
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+                    <a href="#" class="item-folio__project-link" title="Project link">
+                        Detail
+                    </a>
+
+                    <div class="item-folio__caption">
+                        <p><?= $g['deskripsi']; ?></p>
+                    </div>
+                </div> <!-- end item-folio -->
+            <?php endforeach; ?>
+
+
 
 
         </div>
