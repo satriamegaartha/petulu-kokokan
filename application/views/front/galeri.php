@@ -20,10 +20,10 @@
             <nav class="header-nav-wrap" style="margin-left: -170px;">
                 <ul class="header-nav">
                     <li><a href="<?= base_url('front') ?>" title="home">Home</a></li>
-                    <li><a href="<?= base_url('front/galeri') ?>" title="galeri">Galeri</a></li>
+                    <li><a href="<?= base_url('front/galeridesa') ?>" title="galeridesa">Galeri Desa</a></li>
                     <li><a href="<?= base_url('front/sejarah') ?>" title="sejarah">Sejarah</a></li>
                     <li><a href="<?= base_url('front/lokasi') ?>" title="lokasi">Lokasi</a></li>
-                    <li><a href="<?= base_url('front/galeridesa') ?>" title="galeridesa">Galeri Desa</a></li>
+                    <li><a href="<?= base_url('front/galeri') ?>" title="galeri">Galeri Burung</a></li>
                     <li><a href="<?= base_url('front/pengunjung') ?>" title="pengunjung">Pengunjung</a></li>
                     <li><a href="<?= base_url('auth') ?>" title="home">Halaman Admin</a></li>
                 </ul>
@@ -78,7 +78,7 @@
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
-                <h3 data-num="01" class="subhead">Galeri</h3>
+                <h3 data-num="03" class="subhead">Galeri Burung</h3>
 
             </div>
         </div>

@@ -20,10 +20,10 @@
             <nav class="header-nav-wrap" style="margin-left: -170px;">
                 <ul class="header-nav">
                     <li><a href="<?= base_url('front') ?>" title="home">Home</a></li>
-                    <li><a href="<?= base_url('front/galeri') ?>" title="galeri">Galeri</a></li>
+                    <li><a href="<?= base_url('front/galeridesa') ?>" title="galeridesa">Galeri Desa</a></li>
                     <li><a href="<?= base_url('front/sejarah') ?>" title="sejarah">Sejarah</a></li>
                     <li><a href="<?= base_url('front/lokasi') ?>" title="lokasi">Lokasi</a></li>
-                    <li><a href="<?= base_url('front/galeridesa') ?>" title="galeridesa">Galeri Desa</a></li>
+                    <li><a href="<?= base_url('front/galeri') ?>" title="galeri">Galeri Burung</a></li>
                     <li><a href="<?= base_url('front/pengunjung') ?>" title="pengunjung">Pengunjung</a></li>
                     <li><a href="<?= base_url('auth') ?>" title="home">Halaman Admin</a></li>
                 </ul>
@@ -208,12 +208,12 @@
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
-                <h3 data-num="03" class="subhead">Galeri</h3>
+                <h3 data-num="03" class="subhead">Galeri Burung</h3>
                 <h1 class="display-1 ">
-                    Desa Wisata Kokokan
+                    Burung Kokokan
                 </h1>
 
-                <div class="row testimonials" style="margin:0;">
+                <!-- <div class="row testimonials" style="margin:0;">
                     <div class="col-full testimonials__slider">
                         <div class="testimonials__slide">
                             <p>Ubud selalu saja memiliki hal menarik untuk dinikmati, selain sebagai desa seni keberadaan Desa Petulu di Ubud, menjadi tujuan wisata unik yang satu-satunya desa sebagai tempat koloni tetap untuk habitat burung bangau atau dalam bahasa Bali disebut juga Kokokan.</p>
@@ -223,7 +223,7 @@
                             <p>Burung-burung tersebut hidup dengan damai di desa ini tanpa ada yang mengganggu, jumlahnya sekarangnya ratusan, bahkan sampai ribuan, setiap harinya terlihat aktifitas burung tersebut keluar masuk desa, namun pada sore harinya mereka berkumpul kembali ke desa Petulu.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div style="margin-left: 100px;">
                     <a href="<?= base_url('front/galeri') ?>" class="btn btn-animatedbg">
