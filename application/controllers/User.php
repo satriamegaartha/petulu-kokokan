@@ -167,11 +167,11 @@ class User extends CI_Controller
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        $query = "SELECT `user`.* , `sejarah`.*
-                    FROM `user` JOIN `sejarah`
-                      ON `user`.`id` = `sejarah`.`user_id`                                                            
-            ";
-        $data['sejarah'] = $this->db->query($query)->row_array();
+        // $query = "SELECT `user`.* , `sejarah`.*
+        //             FROM `user` JOIN `sejarah`
+        //               ON `user`.`id` = `sejarah`.`user_id`                                                            
+        //     ";
+        // $data['sejarah'] = $this->db->query($query)->row_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -180,70 +180,70 @@ class User extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function sejarahedit($id)
-    {
-        $data['title'] = 'Edit Data Sejarah';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    // public function sejarahedit($id)
+    // {
+    //     $data['title'] = 'Edit Data Sejarah';
+    //     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        $this->form_validation->set_rules('judul', 'Judul', 'required|trim');
-        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
+    //     $this->form_validation->set_rules('judul', 'Judul', 'required|trim');
+    //     $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
-        if ($this->form_validation->run() == false) {
+    //     if ($this->form_validation->run() == false) {
 
-            $query = "SELECT `user`.* , `sejarah`.*
-                    FROM `user` JOIN `sejarah`
-                    ON `user`.`id` = `sejarah`.`user_id` 
-                    WHERE `sejarah`.`id` = $id                                                           
-            ";
-            $data['sejarah'] = $this->db->query($query)->row_array();
+    //         $query = "SELECT `user`.* , `sejarah`.*
+    //                 FROM `user` JOIN `sejarah`
+    //                 ON `user`.`id` = `sejarah`.`user_id` 
+    //                 WHERE `sejarah`.`id` = $id                                                           
+    //         ";
+    //         $data['sejarah'] = $this->db->query($query)->row_array();
 
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('user/sejarahedit', $data);
-            $this->load->view('templates/footer');
-        } else {
-            $id = $this->input->post('id');
-            $judul = $this->input->post('judul');
-            $deskripsi = $this->input->post('deskripsi');
+    //         $this->load->view('templates/header', $data);
+    //         $this->load->view('templates/sidebar', $data);
+    //         $this->load->view('templates/topbar', $data);
+    //         $this->load->view('user/sejarahedit', $data);
+    //         $this->load->view('templates/footer');
+    //     } else {
+    //         $id = $this->input->post('id');
+    //         $judul = $this->input->post('judul');
+    //         $deskripsi = $this->input->post('deskripsi');
 
-            // check jika ada gambar yang akan di upload
-            $upload_image = $_FILES['image']['name'];
+    //         // check jika ada gambar yang akan di upload
+    //         $upload_image = $_FILES['image']['name'];
 
-            if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_size'] = '2048';
-                $config['upload_path'] = './assets/img/galeri/';
+    //         if ($upload_image) {
+    //             $config['allowed_types'] = 'gif|jpg|png';
+    //             $config['max_size'] = '2048';
+    //             $config['upload_path'] = './assets/img/galeri/';
 
-                $this->load->library('upload', $config);
+    //             $this->load->library('upload', $config);
 
-                if ($this->upload->do_upload('image')) {
-                    // hapus gambar lama 
-                    $old_image = $data['sejarah']['image'];
-                    // if ($old_image != 'sejarah.jpg') {
-                    unlink(FCPATH . 'assets/img/galeri/' . $old_image);
-                    unlink(FCPATH . 'assets/img/galeri/thumbnail/' . $old_image);
-                    // }
-                    $new_image = $this->upload->data('file_name');
-                    $this->db->set('image', $new_image);
-                } else {
-                    echo $this->upload->display_errors();
-                }
-            }
+    //             if ($this->upload->do_upload('image')) {
+    //                 // hapus gambar lama 
+    //                 $old_image = $data['sejarah']['image'];
+    //                 // if ($old_image != 'sejarah.jpg') {
+    //                 unlink(FCPATH . 'assets/img/galeri/' . $old_image);
+    //                 unlink(FCPATH . 'assets/img/galeri/thumbnail/' . $old_image);
+    //                 // }
+    //                 $new_image = $this->upload->data('file_name');
+    //                 $this->db->set('image', $new_image);
+    //             } else {
+    //                 echo $this->upload->display_errors();
+    //             }
+    //         }
 
 
-            $this->db->set('judul', $judul);
-            $this->db->set('deskripsi', $deskripsi);
-            $this->db->where('id', $id);
-            $this->db->update('sejarah');
-            if ($upload_image) {
-                $this->upload_image();
-            }
+    //         $this->db->set('judul', $judul);
+    //         $this->db->set('deskripsi', $deskripsi);
+    //         $this->db->where('id', $id);
+    //         $this->db->update('sejarah');
+    //         if ($upload_image) {
+    //             $this->upload_image();
+    //         }
 
-            $this->session->set_flashdata('success', 'Data berhasil diubah');
-            redirect('user/sejarah');
-        }
-    }
+    //         $this->session->set_flashdata('success', 'Data berhasil diubah');
+    //         redirect('user/sejarah');
+    //     }
+    // }
 
     public function lokasi()
     {

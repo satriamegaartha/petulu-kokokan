@@ -9,14 +9,14 @@
         <div class="card-header py-3">
             <div class="row">
                 <div class="col-md-6">
-                    <h5 class="m-0 font-weight-bold text-primary"><?= $sejarah['judul']; ?></h5>
+                    <h5 class="m-0 font-weight-bold text-primary">Sejarah</h5>
                 </div>
                 <div class="col-md-6">
                     <!-- <a class="btn btn-warning btn-sm float-right" href="<?php // base_url('user/sejarahedit/') . $sejarah['id'] 
                                                                                 ?>">Edit Data Sejarah</a> -->
                 </div>
             </div>
-            <h6 class="mt-2 mb-0"><span class="far fa-calendar-alt mr-2"></span><?= date('d F Y', strtotime($sejarah['date'])) ?><span class="fa fa-user mr-2 ml-4"></span><?= $sejarah['nama']; ?></h6>
+            <h6 class="mt-2 mb-0"><span class="fa fa-user mr-2 ml-4"></span>Sejarah Desa Petulu</h6>
         </div>
         <div class="card-body">
             <div class="row justify-content-center mb-3">
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col">
                     <div class="text-justify">
-                        <?= $sejarah['deskripsi']; ?>
+                        <!-- <?= $sejarah['deskripsi']; ?> -->
                     </div>
                 </div>
             </div>
