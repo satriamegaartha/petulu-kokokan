@@ -304,7 +304,9 @@ class Front extends CI_Controller
 		//               ON `user`.`id` = `sejarah`.`user_id`                                                            
 		//     ";
 		// $data['sejarah'] = $this->db->query($query)->row_array();
-
+		$data['sejarah'] = $this->db->get('sejarah')->row_array();
+		// var_dump($data['sejarah']);
+		// die;
 		$this->load->view('templates_front/header', $data);
 		$this->load->view('front/sejarah', $data);
 		$this->load->view('templates_front/footer', $data);

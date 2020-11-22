@@ -26,21 +26,12 @@
             </div>
         </div>
 
-
         <div class="form-group row">
-            <div class="col-sm-2">Gambar</div>
+            <label for="video" class="col-sm-2 col-form-label">Link Video</label>
             <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img src="<?= base_url('assets/img/galeri/') . $sejarah['image'] ?>" class="img-thumbnail">
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="image" name="image">
-                            <label class="custom-file-label" for="image">Choose file</label>
-                        </div>
-                    </div>
-                </div>
+                <textarea class="form-control" id="video" name="video" cols="30" rows="5"><?= $sejarah['video'] ?></textarea>
+                <!-- <input type="text" class="form-control" id="video" name="video" value="<?= $sejarah['video'] ?>"> -->
+                <?= form_error('video', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
         </div>
 

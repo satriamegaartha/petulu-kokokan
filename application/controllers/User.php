@@ -206,39 +206,13 @@ class User extends CI_Controller
             $id = $this->input->post('id');
             $judul = $this->input->post('judul');
             $deskripsi = $this->input->post('deskripsi');
-
-            // check jika ada gambar yang akan di upload
-            $upload_image = $_FILES['image']['name'];
-
-            if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_size'] = '2048';
-                $config['upload_path'] = './assets/img/galeri/';
-
-                $this->load->library('upload', $config);
-
-                if ($this->upload->do_upload('image')) {
-                    // hapus gambar lama 
-                    $old_image = $data['sejarah']['image'];
-                    // if ($old_image != 'sejarah.jpg') {
-                    unlink(FCPATH . 'assets/img/galeri/' . $old_image);
-                    unlink(FCPATH . 'assets/img/galeri/thumbnail/' . $old_image);
-                    // }
-                    $new_image = $this->upload->data('file_name');
-                    $this->db->set('image', $new_image);
-                } else {
-                    echo $this->upload->display_errors();
-                }
-            }
-
+            $video = $this->input->post('video');
 
             $this->db->set('judul', $judul);
             $this->db->set('deskripsi', $deskripsi);
+            $this->db->set('video', $video);
             $this->db->where('id', $id);
             $this->db->update('sejarah');
-            if ($upload_image) {
-                $this->upload_image();
-            }
 
             $this->session->set_flashdata('success', 'Data berhasil diubah');
             redirect('user/sejarah');

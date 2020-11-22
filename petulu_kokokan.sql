@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2020 at 03:05 PM
+-- Generation Time: Nov 22, 2020 at 02:36 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -263,18 +263,17 @@ INSERT INTO `provinsi` (`id`, `nama_provinsi`) VALUES
 CREATE TABLE `sejarah` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `video` varchar(255) NOT NULL,
   `judul` varchar(255) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp()
+  `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sejarah`
 --
 
-INSERT INTO `sejarah` (`id`, `user_id`, `judul`, `deskripsi`, `image`, `date`) VALUES
-(1, 1, 'Sejarah Desa Petulu', '<p>-</p>\r\n', '_MG_99961.JPG', '2020-10-15 09:21:47');
+INSERT INTO `sejarah` (`id`, `user_id`, `video`, `judul`, `deskripsi`) VALUES
+(1, 1, '<iframe width=\"660\" height=\"415\" src=\"https://www.youtube.com/embed/TNKzQMnT978\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'Sejarah Desa Petulu', '<p><strong>Lorem ipsum dolor sit amet c</strong>onsectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuLorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuLorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuLorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuLorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuLorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuLorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuLorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetuorem ipsum dolor sit amet consectetur adipisicing elit. Officia ullam iure fugit alias consequatur distinctio totam odit culpa nobis? Commodi enim, illo saepe repudiandae excepturi cumque dolore tempore ut laborum.Lorem ipsum dolor sit amet consectetu</p>\r\n');
 
 -- --------------------------------------------------------
 

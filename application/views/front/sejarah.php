@@ -100,7 +100,7 @@
                 <div class="col-full">
                     <h3 data-num="02" class="subhead" style="color: white;">Sejarah</h3>
                     <h1 class="display-1" style="color: white;">
-                        Sejarah Desa Petulu
+                        <?= $sejarah['judul']; ?>
                     </h1>
                 </div>
             </div>
@@ -109,9 +109,13 @@
 
                 <div class="row services-list block-1-3 block-m-1-2 block-tab-full" style="margin-left: 270px;">
 
-                    <iframe width="660" height="415" src="https://www.youtube.com/embed/TNKzQMnT978" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- <iframe width="660" height="415" src="https://www.youtube.com/embed/TNKzQMnT978" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    <?= $sejarah['video']; ?>
 
                 </div> <!-- end services-list -->
+                <div class="row" style="color: white; margin-right:80px;margin-left:80px;margin-top:80px;">
+                    <?= $sejarah['deskripsi']; ?>
+                </div>
 
             </div> <!-- end testimonials -->
 
