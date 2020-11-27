@@ -25,6 +25,7 @@
     <script src="<?= base_url('assets_front/'); ?>js/modernizr.js"></script>
     <script src="<?= base_url('assets_front/'); ?>js/pace.min.js"></script>
 
+    <link href="<?= base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- favicons
     ================================================== -->
     <link rel="shortcut icon" href="<?= base_url('assets_front/'); ?>favicon.png" type="image/x-icon">

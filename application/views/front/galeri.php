@@ -103,11 +103,19 @@
                 </div>
 
             </div>
-
             <button type="submit" class="btn btn-primary">Submit</button>
+
             </form>
         </div>
 
+        <div>
+            <div class="container">
+                <div class="row">
+                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left:80px; margin-right:100px; text-align:justify;">Di Desa Petulu ada tiga jenis burung, yang pertama ada yang lehernya panjang tubuhnya agak besar tapi warnanya putih mulus tidak ada warna lain lagi, itu namanya “Kokokan”. Yang kedua ada burung yang tubuhnya sedikit lebih kecil dipunggungnya ada warna kuning ada jambulnya kuning juga namanya “Bangau-bangau”. Yang ketiga ada yang tubuhnya lebih kecil mirip seperti ayam kampung betina namnya “Blekok” dimana punggungnya warnanya hitam.</p>
+                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left:80px; margin-right:100px; text-align:justify;">Burung kokokan dia bersarang di atas pohon dengan ranting-ranting pohon bunut yang ada, dan satu sarang minimal punya anak 2 ekor, maksimal 4 ekor. Anaknya dipelihara sampai dia bisa mengikuti induknya terbang kurang lebih 5 bulan. Induknya terbang mencari makan dari jam 5 pagi ke seluruh pulau Bali tepatnya di sawah yang ber-air, danau, dan rawa-rawa, kemudian jam 6 sore mereka pulang untuk memberi anaknya makan.</p>
+                </div>
+            </div>
+        </div>
         <!-- <div class="portfolio block-1-4 block-m-1-3 block-tab-1-2 collapse"> -->
         <div class="portfolio block-m-1-3 block-tab-1-2 collapse">
 

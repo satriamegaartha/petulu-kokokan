@@ -16,7 +16,13 @@
             </div>
         </div>
 
-
+        <div class="form-group row">
+            <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="alamat" name="alamat" value="<?= set_value('alamat') ?>">
+                <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+        </div>
 
 
         <div class="form-group row">

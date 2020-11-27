@@ -167,11 +167,11 @@ class User extends CI_Controller
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        $query = "SELECT `user`.* , `sejarah`.*
-                    FROM `user` JOIN `sejarah`
-                      ON `user`.`id` = `sejarah`.`user_id`                                                            
-            ";
-        $data['sejarah'] = $this->db->query($query)->row_array();
+        // $query = "SELECT `user`.* , `sejarah`.*
+        //             FROM `user` JOIN `sejarah`
+        //               ON `user`.`id` = `sejarah`.`user_id`                                                            
+        //     ";
+        // $data['sejarah'] = $this->db->query($query)->row_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -179,6 +179,7 @@ class User extends CI_Controller
         $this->load->view('user/sejarah', $data);
         $this->load->view('templates/footer');
     }
+
 
     public function sejarahedit($id)
     {
@@ -738,6 +739,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama', 'nama', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
         $this->form_validation->set_rules('jenis_galeri_desa', 'jenis_galeri_desa', 'required|trim');
         $this->form_validation->set_rules('deskripsi_galeri', 'Deskripsi Galeri', 'required|trim');
         // $this->form_validation->set_rules('image', 'image', 'required');
@@ -786,6 +788,7 @@ class User extends CI_Controller
             // die;
             $data = [
                 'nama' => $this->input->post('nama'),
+                'alamat' => $this->input->post('alamat'),
                 'deskripsi' => $this->input->post('deskripsi_galeri'),
                 'jenis_galeri_desa_id' => $this->input->post('jenis_galeri_desa'),
                 'image' => $new_image,
@@ -804,6 +807,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama', 'nama', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
         $this->form_validation->set_rules('jenis_galeri_desa', 'jenis_galeri_desa', 'required|trim');
         $this->form_validation->set_rules('deskripsi_galeri', 'Deskripsi Galeri', 'required|trim');
         $this->form_validation->set_rules('image', 'image', '');
@@ -821,6 +825,7 @@ class User extends CI_Controller
         } else {
             $id = $this->input->post('id');
             $nama = $this->input->post('nama');
+            $alamat = $this->input->post('alamat');
             $deskripsi = $this->input->post('deskripsi_galeri');
             $jenis_galeri_desa = $this->input->post('jenis_galeri_desa');
             // $image = $this->input->post('image');
@@ -851,6 +856,7 @@ class User extends CI_Controller
             }
 
             $this->db->set('nama', $nama);
+            $this->db->set('alamat', $alamat);
             $this->db->set('jenis_galeri_desa_id', $jenis_galeri_desa);
             $this->db->set('deskripsi', $deskripsi);
             // $this->db->set('image', $image);

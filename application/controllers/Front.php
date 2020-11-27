@@ -6,7 +6,7 @@ class Front extends CI_Controller
 	public function index()
 	{
 		$data['title'] = 'Petulu';
-		$data['sejarah'] = $this->db->get('sejarah')->row_array();
+		// $data['sejarah'] = $this->db->get('sejarah')->row_array();
 		$data['lokasi'] = $this->db->get('lokasi')->row_array();
 		$query = "SELECT `jenis_burung`.* , `galeri`.*
 					FROM `jenis_burung` JOIN `galeri`

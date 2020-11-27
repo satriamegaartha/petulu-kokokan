@@ -61,7 +61,7 @@
                     </h1>
                 </div>
                 <div class="col-md-6" style="margin-top: 50px">
-                    <iframe width="460" height="215" src="https://www.youtube.com/embed/_fRjwwnS2H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_fRjwwnS2H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <!-- <div class="home-content__button">
                     <a href="#about" class="smoothscroll btn btn-animatedbg">
@@ -137,9 +137,10 @@
                         <h3 class="item-folio__title">
                             <?= $g['nama']; ?>
                         </h3>
-                        <p class="item-folio__cat">
-                            <?= $g['jenis']; ?>
-                        </p>
+                        <!-- <p class="item-folio__cat">
+                            <?php // $g['jenis']; 
+                            ?>
+                        </p> -->
                     </div>
 
                     <a href="#" class="item-folio__project-link" title="Project link">
@@ -147,7 +148,7 @@
                     </a>
 
                     <div class="item-folio__caption">
-                        <p><?= $g['deskripsi']; ?></p>
+                        <p><?= $g['alamat']; ?></p>
                     </div>
                 </div> <!-- end item-folio -->
             <?php endforeach; ?>

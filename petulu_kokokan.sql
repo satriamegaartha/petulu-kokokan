@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2020 at 02:36 AM
+-- Generation Time: Nov 27, 2020 at 09:11 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -73,6 +73,7 @@ CREATE TABLE `galeri_desa` (
   `nama` varchar(255) NOT NULL,
   `jenis_galeri_desa_id` int(11) NOT NULL,
   `deskripsi` text NOT NULL,
+  `alamat` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `date_created` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -81,28 +82,28 @@ CREATE TABLE `galeri_desa` (
 -- Dumping data for table `galeri_desa`
 --
 
-INSERT INTO `galeri_desa` (`id`, `nama`, `jenis_galeri_desa_id`, `deskripsi`, `image`, `date_created`) VALUES
-(15, 'Bali Creative Warung', 2, '<p>-</p>', '_MG_9849.jpg', '2020-11-16'),
-(16, 'Girendra Villa', 1, '<p>-</p>', '_MG_9852.jpg', '2020-11-16'),
-(17, 'Desa', 3, '<p>-</p>', '_MG_9885.JPG', '2020-11-16'),
-(18, 'Bungsil Guest House', 1, '<p>-</p>', 'IMG_0392.JPG', '2020-11-16'),
-(19, 'Villa', 1, '<p>-</p>', 'IMG_5359_2.jpg', '2020-11-16'),
-(20, 'Klub Kokos', 2, '<p>-</p>', 'IMG_5361.jpg', '2020-11-16'),
-(21, 'Desa', 3, '<p>-</p>', 'IMG_5362.jpg', '2020-11-16'),
-(22, 'Lebah Warung', 2, '<p>-</p>', 'IMG_5369.jpg', '2020-11-16'),
-(23, 'Karsa Kafe', 2, '<p>-</p>', 'IMG_5370.jpg', '2020-11-16'),
-(24, 'Villa', 1, '<p>-</p>', 'IMG_5371.jpg', '2020-11-16'),
-(25, 'Villa', 1, '<p>-</p>', 'IMG_5375.jpg', '2020-11-16'),
-(26, 'Desa', 3, '<p>-</p>', 'IMG_5379.jpg', '2020-11-16'),
-(27, 'Villa', 1, '<p>-</p>', 'IMG_5385.jpg', '2020-11-16'),
-(28, 'Villa', 1, '<p>-</p>', 'IMG_5387.jpg', '2020-11-16'),
-(29, 'Villa', 1, '<p>-</p>', 'IMG_5389.jpg', '2020-11-16'),
-(30, 'Villa', 1, '<p>-</p>', 'IMG_5391.JPG', '2020-11-16'),
-(31, 'Villa', 1, '<p>-</p>', 'IMG_5394.JPG', '2020-11-16'),
-(32, 'Desa', 3, '<p>-</p>', 'IMG_9083.JPG', '2020-11-16'),
-(33, 'Desa', 3, '<p>-</p>', 'IMG_9094.JPG', '2020-11-16'),
-(34, 'Kokokan Warung', 2, '<p>-</p>', 'IMG_9161.JPG', '2020-11-16'),
-(35, 'Desa', 3, '<p>-</p>', 'IMG_9716.JPG', '2020-11-16');
+INSERT INTO `galeri_desa` (`id`, `nama`, `jenis_galeri_desa_id`, `deskripsi`, `alamat`, `image`, `date_created`) VALUES
+(15, 'Bali Creative Warung', 2, '<p>-</p>', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsa quod, sit fugit minima quidem officia magnam ratione non iure in asperiores! Nihil rem assumenda voluptates iusto id soluta aperiam.', '_MG_9849.jpg', '2020-11-16'),
+(16, 'Girendra Villa', 1, '<p>-</p>', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsa quod, sit fugit minima quidem officia magnam ratione non iure in asperiores! Nihil rem assumenda voluptates iusto id soluta aperiam.', '_MG_9852.jpg', '2020-11-16'),
+(17, 'Desa', 3, '<p>-</p>', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsa quod, sit fugit minima quidem officia magnam ratione non iure in asperiores! Nihil rem assumenda voluptates iusto id soluta aperiam.', '_MG_9885.JPG', '2020-11-16'),
+(18, 'Bungsil Guest House', 1, '<p>-</p>', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsa quod, sit fugit minima quidem officia magnam ratione non iure in asperiores! Nihil rem assumenda voluptates iusto id soluta aperiam.', 'IMG_0392.JPG', '2020-11-16'),
+(19, 'Villa', 1, '<p>-</p>', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsa quod, sit fugit minima quidem officia magnam ratione non iure in asperiores! Nihil rem assumenda voluptates iusto id soluta aperiam.', 'IMG_5359_2.jpg', '2020-11-16'),
+(20, 'Klub Kokos', 2, '<p>-</p>', '', 'IMG_5361.jpg', '2020-11-16'),
+(21, 'Desa', 3, '<p>-</p>', '', 'IMG_5362.jpg', '2020-11-16'),
+(22, 'Lebah Warung', 2, '<p>-</p>', '', 'IMG_5369.jpg', '2020-11-16'),
+(23, 'Karsa Kafe', 2, '<p>-</p>', '', 'IMG_5370.jpg', '2020-11-16'),
+(24, 'Villa', 1, '<p>-</p>', '', 'IMG_5371.jpg', '2020-11-16'),
+(25, 'Villa', 1, '<p>-</p>', '', 'IMG_5375.jpg', '2020-11-16'),
+(26, 'Desa', 3, '<p>-</p>', '', 'IMG_5379.jpg', '2020-11-16'),
+(27, 'Villa', 1, '<p>-</p>', '', 'IMG_5385.jpg', '2020-11-16'),
+(28, 'Villa', 1, '<p>-</p>', '', 'IMG_5387.jpg', '2020-11-16'),
+(29, 'Villa', 1, '<p>-</p>', '', 'IMG_5389.jpg', '2020-11-16'),
+(30, 'Villa', 1, '<p>-</p>', '', 'IMG_5391.JPG', '2020-11-16'),
+(31, 'Villa', 1, '<p>-</p>', '', 'IMG_5394.JPG', '2020-11-16'),
+(32, 'Desa', 3, '<p>-</p>', '', 'IMG_9083.JPG', '2020-11-16'),
+(33, 'Desa', 3, '<p>-</p>', '', 'IMG_9094.JPG', '2020-11-16'),
+(34, 'Kokokan Warung', 2, '<p>-</p>', '', 'IMG_9161.JPG', '2020-11-16'),
+(35, 'Desa', 3, '<p>-</p>', '', 'IMG_9716.JPG', '2020-11-16');
 
 -- --------------------------------------------------------
 
@@ -371,7 +372,7 @@ ALTER TABLE `galeri`
 -- AUTO_INCREMENT for table `galeri_desa`
 --
 ALTER TABLE `galeri_desa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `jenis_burung`

@@ -20,6 +20,14 @@
         </div>
 
         <div class="form-group row">
+            <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $galeri_desa['alamat'] ?>">
+                <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label for="jenis_galeri_desa" class="col-sm-2 col-form-label">Jenis Burung</label>
             <div class="col-sm-10">
                 <select class="form-control" id="" name="jenis_galeri_desa">

@@ -121,9 +121,10 @@
                         <h3 class="item-folio__title">
                             <?= $g['nama']; ?>
                         </h3>
-                        <p class="item-folio__cat">
-                            <?= $g['jenis']; ?>
-                        </p>
+                        <!-- <p class="item-folio__cat">
+                            <?php // $g['jenis']; 
+                            ?>
+                        </p> -->
                     </div>
 
                     <a href="#" class="item-folio__project-link" title="Project link">
@@ -131,7 +132,7 @@
                     </a>
 
                     <div class="item-folio__caption">
-                        <p><?= $g['deskripsi']; ?></p>
+                        <p><?= $g['alamat']; ?></p>
                     </div>
                 </div> <!-- end item-folio -->
             <?php endforeach; ?>
