@@ -172,6 +172,7 @@ class User extends CI_Controller
         //               ON `user`.`id` = `sejarah`.`user_id`                                                            
         //     ";
         // $data['sejarah'] = $this->db->query($query)->row_array();
+        $data['sejarah'] = $this->db->get('sejarah')->row_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
