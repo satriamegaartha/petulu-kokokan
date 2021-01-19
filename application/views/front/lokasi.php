@@ -71,7 +71,7 @@
         </div> <!-- end home-content -->
 
     </section> <!-- end s-home -->
-    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/ubud.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/lokasi.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
         <div class="testimonials-wrap" data-aos="fade-up">
 
             <div class="row section-header" data-aos="fade-up">
@@ -89,13 +89,13 @@
 
                     <div class="testimonials__slide">
                         <!-- <span class="testimonials__icon"></span> -->
-                        <p style="color: white;">Burung kokokan berada di Desa Petulu, Ubud. Ya Ubud selalu saja memiliki hal menarik untuk dinikmati.</p>
+                        <p style="color: white; text-align:justify;">Burung kokokan berada di Desa Petulu, Ubud. Ya Ubud selalu saja memiliki hal menarik untuk dinikmati.</p>
 
                     </div> <!-- end testimonials__slide -->
 
                     <div class="testimonials__slide">
                         <!-- <span class="testimonials__icon"></span> -->
-                        <p style="color: white;"> Keberadaan burung bangau atau kokokan, terasa menyatu dengan kehidupan warga dan alam, sehingga jarang bisa ditemukan di tempat lainnya, dan membuatnya layak menjadi salah satu tujuan wisata unik di Bali</p>
+                        <p style="color: white; text-align:justify;"> Keberadaan burung bangau atau kokokan, terasa menyatu dengan kehidupan warga dan alam, sehingga jarang bisa ditemukan di tempat lainnya, dan membuatnya layak menjadi salah satu tujuan wisata unik di Bali</p>
                     </div> <!-- end testimonials__slide -->
 
 

@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="jenis_galeri_desa" class="col-sm-2 col-form-label">Jenis Burung</label>
+            <label for="jenis_galeri_desa" class="col-sm-2 col-form-label">Jenis</label>
             <div class="col-sm-10">
                 <select class="form-control" id="" name="jenis_galeri_desa">
                     <?php foreach ($jenis_galeri_desa as $p) : ?>

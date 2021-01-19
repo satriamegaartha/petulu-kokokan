@@ -40,7 +40,7 @@
 
     <!-- home
     ================================================== -->
-    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/sawah.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/home.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="shadow-overlay"></div>
 
@@ -102,11 +102,11 @@
                 <div class="row testimonials" style="margin:0;">
                     <div class="col-full testimonials__slider">
                         <div class="testimonials__slide">
-                            <p>Ubud selalu saja memiliki hal menarik untuk dinikmati, selain sebagai desa seni keberadaan Desa Petulu di Ubud, menjadi tujuan wisata unik yang satu-satunya desa sebagai tempat koloni tetap untuk habitat burung bangau atau dalam bahasa Bali disebut juga Kokokan.</p>
+                            <p style=" text-align:justify;">Ubud selalu saja memiliki hal menarik untuk dinikmati, selain sebagai desa seni keberadaan Desa Petulu di Ubud, menjadi tujuan wisata unik yang satu-satunya desa sebagai tempat koloni tetap untuk habitat burung bangau atau dalam bahasa Bali disebut juga Kokokan.</p>
                         </div>
                         <div class="testimonials__slide">
 
-                            <p>Burung-burung tersebut hidup dengan damai di desa ini tanpa ada yang mengganggu, jumlahnya sekarangnya ratusan, bahkan sampai ribuan, setiap harinya terlihat aktifitas burung tersebut keluar masuk desa, namun pada sore harinya mereka berkumpul kembali ke desa Petulu.</p>
+                            <p style=" text-align:justify;">Burung-burung tersebut hidup dengan damai di desa ini tanpa ada yang mengganggu, jumlahnya sekarangnya ratusan, bahkan sampai ribuan, setiap harinya terlihat aktifitas burung tersebut keluar masuk desa, namun pada sore harinya mereka berkumpul kembali ke desa Petulu.</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
 
     </section>
 
-    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/ubud.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="<?= base_url('assets_front/'); ?>images/portfolio/lokasi.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
         <div class="testimonials-wrap" data-aos="fade-up">
 
             <div class="row section-header" data-aos="fade-up">
@@ -179,13 +179,13 @@
 
                     <div class="testimonials__slide">
                         <!-- <span class="testimonials__icon"></span> -->
-                        <p style="color: white;">Burung kokokan berada di Desa Petulu, Ubud. Ya Ubud selalu saja memiliki hal menarik untuk dinikmati.</p>
+                        <p style="color: white; text-align:justify;">Burung kokokan berada di Desa Petulu, Ubud. Ya Ubud selalu saja memiliki hal menarik untuk dinikmati.</p>
 
                     </div> <!-- end testimonials__slide -->
 
                     <div class="testimonials__slide">
                         <!-- <span class="testimonials__icon"></span> -->
-                        <p style="color: white;"> Keberadaan burung bangau atau kokokan, terasa menyatu dengan kehidupan warga dan alam, sehingga jarang bisa ditemukan di tempat lainnya, dan membuatnya layak menjadi salah satu tujuan wisata unik di Bali</p>
+                        <p style="color: white; text-align:justify;"> Keberadaan burung bangau atau kokokan, terasa menyatu dengan kehidupan warga dan alam, sehingga jarang bisa ditemukan di tempat lainnya, dan membuatnya layak menjadi salah satu tujuan wisata unik di Bali</p>
                     </div> <!-- end testimonials__slide -->
 
 
@@ -291,14 +291,14 @@
                 </h1>
                 <p class="lead" style="color: white;">
                     <?= $subtitle; ?>
-                    <div style="margin-left: 100px;">
-                        <a href="<?= base_url('front/pengunjung') ?>" class="btn btn-animatedbg">
-                            <div>
-                                Lihat Detail Data Pengunjung
-                            </div>
-                        </a>
-                    </div>
-                    <hr>
+                <div style="margin-left: 100px;">
+                    <a href="<?= base_url('front/pengunjung') ?>" class="btn btn-animatedbg">
+                        <div>
+                            Lihat Detail Data Pengunjung
+                        </div>
+                    </a>
+                </div>
+                <hr>
                 </p>
 
             </div>

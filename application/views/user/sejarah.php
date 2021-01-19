@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="text-justify">
+                    <div class="text-justify" style="background-color: white;">
                         <?= $sejarah['deskripsi']; ?>
                     </div>
                 </div>

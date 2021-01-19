@@ -99,7 +99,7 @@
             <div class="row section-header" data-aos="fade-up">
                 <div class="col-full">
                     <h3 data-num="02" class="subhead" style="color: white;">Sejarah</h3>
-                    <h1 class="display-1" style="color: white;">
+                    <h1 class="display-1" style="color: white; ">
                         <?= $sejarah['judul']; ?>
                     </h1>
                 </div>
@@ -113,7 +113,7 @@
                     <?= $sejarah['video']; ?>
 
                 </div> <!-- end services-list -->
-                <div class="row" style="color: white; margin-right:80px;margin-left:80px;margin-top:80px;">
+                <div class="row" style="color: white; margin-right:80px;margin-left:80px;margin-top:80px;  text-align:justify;">
                     <?= $sejarah['deskripsi']; ?>
                 </div>
 
